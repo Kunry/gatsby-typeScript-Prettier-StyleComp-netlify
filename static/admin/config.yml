@@ -11,7 +11,9 @@ collections:
     label: "Blog"
     folder: "src/pages/blog"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+     preview: false
     fields:
       - { label: "Course", name: "course", widget: "string" }
       - { label: "Course Code", name: "course_code", widget: "string" }
