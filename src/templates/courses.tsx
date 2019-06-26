@@ -3,10 +3,12 @@ import React from "react";
 import { TitleCourse } from "./TitleCourse";
 
 const Courses = ({ data }: any) => {
-  const course = data.markdownRemark.frontmatter;
+  const course = data && data.markdownRemark.frontmatter;
   return (
-    <TitleCourse color={course.pipedrive_product_code > 100 ? "green" : "red"}>
-      {course.course}
+    <TitleCourse
+      color={course && course.pipedrive_product_code > 100 ? "green" : "red"}
+    >
+      {course && course.course}
     </TitleCourse>
   );
 };

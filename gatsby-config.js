@@ -9,65 +9,7 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-typescript",
     "gatsby-plugin-tslint",
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            setup: locals => {
-              return {
-                ...locals,
-                ...locals.query.site.siteMetadata,
-                site_url: "https://ahnheejong.name/",
-                feed_url: "https://ahnheejong.name/feed.xml"
-              };
-            },
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                const articleUrl = `${site.siteMetadata.siteUrl}${edge.node.fields.slug}`;
-
-                return {
-                  ...edge.node.frontmatter,
-                  url: articleUrl,
-                  guid: articleUrl
-                };
-              });
-            },
-            query: `
-              {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
-                  edges {
-                    node {
-                      fields { slug }
-                      frontmatter {
-                        title
-                        description
-                        date
-                        tags
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: "/feed.xml"
-          }
-        ]
-      }
-    },
+    
     {
       resolve: "gatsby-plugin-styled-components",
       options: {}
