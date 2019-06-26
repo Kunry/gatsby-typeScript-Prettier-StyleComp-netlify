@@ -1,22 +1,23 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { BlogPostTemplate } from '../../templates/blog-post.tsx'
-import '../../components/all.scss'
+import React from "react";
+import PropTypes from "prop-types";
+import { BlogPostTemplate } from "../../templates/blog-post.tsx";
+import "../../components/all.scss";
 
 const BlogPostPreview = ({ entry, widgetFor }) => (
   <BlogPostTemplate
-    content={widgetFor('body')}
-    description={entry.getIn(['data', 'description'])}
-    tags={entry.getIn(['data', 'tags'])}
-    title={entry.getIn(['data', 'title'])}
+    content={widgetFor("body")}
+    description={entry.getIn(["data", "description"])}
+    course={entry.getIn(["data", "course"])}
+    course_code={entry.getIn(["data", "course_code"])}
+    pipedrive_product_code={entry.getIn(["data", "pipedrive_product_code"])}
   />
-)
+);
 
 BlogPostPreview.propTypes = {
   entry: PropTypes.shape({
-    getIn: PropTypes.func,
+    getIn: PropTypes.func
   }),
-  widgetFor: PropTypes.func,
-}
+  widgetFor: PropTypes.func
+};
 
-export default BlogPostPreview
+export default BlogPostPreview;

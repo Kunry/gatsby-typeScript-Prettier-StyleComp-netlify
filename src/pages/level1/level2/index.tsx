@@ -11,10 +11,18 @@ interface Props {
   ];
 }
 
-const indexLevel2: React.SFC<Props> = props => {
+const indexLevel2: React.SFC<any> = props => {
+  const courses = props.data.allMarkdownRemark.edges.map(
+    ({ node }: any) => node.frontmatter.course
+  );
   return (
     <>
-      <h1>Index2</h1>
+      <h1>{props.data.allMarkdownRemark.edges[0].node.frontmatter.course}</h1>
+      <ul>
+        {courses.map((course: any) => (
+          <li key={course}>{course}</li>
+        ))}
+      </ul>
     </>
   );
 };
