@@ -1,12 +1,12 @@
-import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import PostItem, { PostList } from "../components/Post";
+import React from "react";
 import styled from "styled-components";
+import Layout from "../components/Layout";
 import PageHelmet from "../components/PageHelmet";
+import PostItem, { PostList } from "../components/Post";
 
 class TagRoute extends React.Component<any> {
-  render() {
+  public render() {
     const { allMarkdownRemark } = this.props.data;
 
     const posts = allMarkdownRemark.edges;
@@ -38,31 +38,31 @@ class TagRoute extends React.Component<any> {
 
 export default TagRoute;
 
-export const tagPageQuery = graphql`
-  query TagPage($tag: String) {
-    allMarkdownRemark(
-      limit: 1000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
-    ) {
-      totalCount
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-            tags
-          }
-        }
-      }
-    }
-  }
-`;
+// export const tagPageQuery = graphql`
+//   query TagPage($tag: String) {
+//     allMarkdownRemark(
+//       limit: 1000
+//       sort: { fields: [frontmatter___date], order: DESC }
+//       filter: { frontmatter: { tags: { in: [$tag] } } }
+//     ) {
+//       totalCount
+//       edges {
+//         node {
+//           id
+//           fields {
+//             slug
+//           }
+//           frontmatter {
+//             date(formatString: "MMMM DD, YYYY")
+//             title
+//             description
+//             tags
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 const Header = styled.h1`
   font-weight: normal;

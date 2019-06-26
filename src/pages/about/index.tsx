@@ -1,7 +1,9 @@
 import React from "react";
+
 import Layout from "../../components/Layout";
-import styled from "styled-components";
 import PageHelmet from "../../components/PageHelmet";
+
+import styled from "styled-components";
 
 const LanguageSelectors = styled.div`
   display: flex;
@@ -47,8 +49,6 @@ const SectionContent = styled.div`
   }
 `;
 
-interface Props {}
-
 type Language = "KO" | "EN";
 
 interface State {
@@ -57,13 +57,13 @@ interface State {
 
 const lineBreak = `\n`;
 
-export class AboutPage extends React.Component<Props, State> {
-  constructor(props: Props) {
+export class AboutPage extends React.Component<{}, State> {
+  constructor(props: {}) {
     super(props);
     this.state = { language: "KO" };
   }
 
-  render() {
+  public render() {
     return (
       <Layout>
         <PageHelmet

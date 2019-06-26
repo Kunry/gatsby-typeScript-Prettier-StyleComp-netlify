@@ -1,20 +1,21 @@
 import React from "react";
+
 import Layout from "../components/Layout";
-import { push } from "gatsby";
 import PageHelmet from "../components/PageHelmet";
 
+import { push } from "gatsby";
 interface State {
   timeout: number;
 }
 
 class NotFoundPage extends React.Component<{}, State> {
-  timer = -1;
+  private timer = -1;
   constructor(props: {}) {
     super(props);
     this.state = { timeout: 5 };
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     this.timer = window.setInterval(() => {
       if (this.state.timeout === 1) {
         push("/");
@@ -24,11 +25,11 @@ class NotFoundPage extends React.Component<{}, State> {
     }, 1000);
   }
 
-  componentWillUnmount() {
+  public componentWillUnmount() {
     window.clearInterval(this.timer);
   }
 
-  render() {
+  public render() {
     return (
       <Layout>
         <PageHelmet

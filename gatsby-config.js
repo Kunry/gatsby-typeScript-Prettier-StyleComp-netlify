@@ -8,6 +8,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     "gatsby-plugin-typescript",
+    "gatsby-plugin-tslint",
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -34,9 +35,7 @@ module.exports = {
             },
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
-                const articleUrl = `${site.siteMetadata.siteUrl}${
-                  edge.node.fields.slug
-                }`;
+                const articleUrl = `${site.siteMetadata.siteUrl}${edge.node.fields.slug}`;
 
                 return {
                   ...edge.node.frontmatter,

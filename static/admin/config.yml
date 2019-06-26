@@ -2,25 +2,18 @@ backend:
   name: git-gateway
   branch: master
 
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 media_folder: static/assets
 public_folder: /assets
 
 collections:
-  - name: "article"
-    label: "Article"
-    folder: "src/pages/articles"
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
     create: true
     slug: "{{slug}}"
     fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "blog-post",
-        }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "Course Code", name: "course_code", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Code", name: "pipedrive_product_code", widget: "number" }

@@ -1,11 +1,9 @@
 import React from "react";
-import { Link } from "gatsby";
-import styled from "styled-components";
 
 const Navbar = () => (
   <Wrapper>
     <NavItem to="/" style={{ fontWeight: "bold" }} activeClassName="nav-active">
-      ahn.heejong
+      Pepe
     </NavItem>
     <NavItem to="/about" activeClassName="nav-active">
       about
@@ -14,6 +12,8 @@ const Navbar = () => (
 );
 
 export default Navbar;
+
+import styled from "styled-components";
 
 const Wrapper = styled.nav`
   z-index: 1000;
@@ -33,6 +33,7 @@ const Wrapper = styled.nav`
     padding: 0 24px;
   }
 `;
+import { Link } from "gatsby";
 
 const NavItem = styled(Link)`
   text-decoration: none;
