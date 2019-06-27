@@ -13,11 +13,11 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: course
-    filet: {field: "language", value: "en"}
+    filter: {field: "language", value: "en"}
     editor:
      preview: false
     fields:
-      - { lavel: "Language", name: "language", widget: "select", options: ["es", "en"] }
+      - { lavel: "Language", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
       - { label: "Course", name: "course", widget: "string" }
       - { label: "Course Code", name: "course_code", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -26,8 +26,8 @@ collections:
         name: "test_obj"
         widget: "object"
         fields: 
-          - { label: "Level 1", name: "test_level_1_1", widget: "string"}
-          - { label: "Level 2", name: "test_level_1_2", widget: "string"}
+          - { label: "Level 1", name: "test_level1_1", widget: "string"}
+          - { label: "Level 2", name: "test_level1_2", widget: "string"}
 
   - label: "Blog en Español"
     name: "spanish"
@@ -35,11 +35,11 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: course
-    filet: {field: "language", value: "es"}
+    filter: {field: "language", value: "es"}
     editor:
      preview: false
     fields:
-      - { lavel: "Lenguaje", name: "language", widget: "select", options: ["es", "en"] }
+      - { lavel: "Lenguaje", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
       - { label: "Course", name: "course", widget: "string" }
       - { label: "Course Code", name: "course_code", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -48,6 +48,116 @@ collections:
         name: "test_obj"
         widget: "object"
         fields: 
-          - { label: "Level 1", name: "test_level_1_1", widget: "string"}
-          - { label: "Level 2", name: "test_level_1_2", widget: "string"}
+          - { label: "Level 1", name: "test_level1_1", widget: "string"}
+          - { label: "Level 2", name: "test_level1_2", widget: "string"}
+
+  - label: "blog en Français"
+    name: "french"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: course
+    filter: {field: "language", value: "fr"}
+    editor:
+     preview: false
+    fields:
+      - { lavel: "Lenguaje", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "Course Code", name: "course_code", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Code", name: "pipedrive_product_code", widget: "number" }
+      - label: "Test Obj"
+        name: "test_obj"
+        widget: "object"
+        fields: 
+          - { label: "Level 1", name: "test_level1_1", widget: "string"}
+          - { label: "Level 2", name: "test_level1_2", widget: "string"}
+
+  - label: "Blog auf Deutsch"
+    name: "german"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: course
+    filter: {field: "language", value: "de"}
+    editor:
+     preview: false
+    fields:
+      - { lavel: "Lenguaje", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "Course Code", name: "course_code", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Code", name: "pipedrive_product_code", widget: "number" }
+      - label: "Test Obj"
+        name: "test_obj"
+        widget: "object"
+        fields: 
+          - { label: "Level 1", name: "test_level1_1", widget: "string"}
+          - { label: "Level 2", name: "test_level1_2", widget: "string"}
+
+  - label: "Blog em Português Brazilian"
+    name: "brazilian"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: course
+    filter: {field: "language", value: "be"}
+    editor:
+     preview: false
+    fields:
+      - { lavel: "Lenguaje", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "Course Code", name: "course_code", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Code", name: "pipedrive_product_code", widget: "number" }
+      - label: "Test Obj"
+        name: "test_obj"
+        widget: "object"
+        fields: 
+          - { label: "Level 1", name: "test_level1_1", widget: "string"}
+          - { label: "Level 2", name: "test_level1_2", widget: "string"}
+
+  - label: "Blog em Português"
+    name: "portuguese"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: course
+    filter: {field: "language", value: "pt"}
+    editor:
+     preview: false
+    fields:
+      - { lavel: "Language", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "Course Code", name: "course_code", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Code", name: "pipedrive_product_code", widget: "number" }
+      - label: "Test Obj"
+        name: "test_obj"
+        widget: "object"
+        fields: 
+          - { label: "Level 1", name: "test_level1_1", widget: "string"}
+          - { label: "Level 2", name: "test_level1_2", widget: "string"}
+
+  - label: "Blog in het Nederlands"
+    name: "dutch"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: course
+    filter: {field: "language", value: "nl"}
+    editor:
+     preview: false
+    fields:
+      - { lavel: "Language", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "Course Code", name: "course_code", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Code", name: "pipedrive_product_code", widget: "number" }
+      - label: "Test Obj"
+        name: "test_obj"
+        widget: "object"
+        fields: 
+          - { label: "Level 1", name: "test_level1_1", widget: "string"}
+          - { label: "Level 2", name: "test_level1_2", widget: "string"}
         
