@@ -1,4 +1,6 @@
 const path = require(`path`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
+
 // const remark = require(`remark`)
 // const html = require(`remark-html`)
 // const dateformat = require(`dateformat`)
