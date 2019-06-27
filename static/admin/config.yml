@@ -12,7 +12,7 @@ collections:
     folder: "src/pages/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    identifier_field: cms
+    identifier_field: "cms"
     editor:
      preview: false
     fields:
