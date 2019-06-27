@@ -1,13 +1,15 @@
 import React from "react";
 
 import { graphql, Link } from "gatsby";
-import { TitleCourse } from "./TitleCourse";
+import { Header, Section, TitleCourse } from "./style";
 
 interface Post {
   frontmatter: {
     course: string;
     pipedrive_product_code: number;
     course_code?: string;
+    language?: string;
+    description?: string;
   };
 }
 
@@ -18,19 +20,27 @@ const Courses: React.SFC<{
   const { previous, next } = data;
   return (
     <>
-      <TitleCourse
-        color={course.pipedrive_product_code > 100 ? "green" : "red"}
-      >
-        {course.course}
-      </TitleCourse>
-      {[previous, next].map(
-        courseObj =>
-          courseObj && (
-            <Link to={`/course/${courseObj.frontmatter.course_code}`}>
-              {courseObj.frontmatter.course}
-            </Link>
-          )
-      )}
+      <Header>
+        <TitleCourse
+          color={course.pipedrive_product_code > 100 ? "green" : "red"}
+        >
+          {course.course}
+        </TitleCourse>
+      </Header>
+      {course.description}
+      <Section>
+        {[previous, next].map(
+          courseObj =>
+            courseObj && (
+              <Link
+                key={courseObj.frontmatter.course}
+                to={`/${courseObj.frontmatter.language}/course/${courseObj.frontmatter.course_code}`}
+              >
+                {courseObj.frontmatter.course}
+              </Link>
+            )
+        )}
+      </Section>
     </>
   );
 };
@@ -49,6 +59,7 @@ export const courseQuery = graphql`
       frontmatter {
         course
         pipedrive_product_code
+        description
       }
     }
     previous: markdownRemark(id: { eq: $previousId })
@@ -56,12 +67,14 @@ export const courseQuery = graphql`
       frontmatter {
         course
         course_code
+        language
       }
     }
     next: markdownRemark(id: { eq: $nextId }) @include(if: $hasNext) {
       frontmatter {
         course
         course_code
+        language
       }
     }
   }

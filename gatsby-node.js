@@ -33,7 +33,6 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
   const PruebaParams = path.resolve("src/components/PruebaParams.tsx");
-  console.log("entras");
   const router = [
     {
       routes: "Madrid",
@@ -72,12 +71,10 @@ exports.createPages = async ({ actions, graphql }) => {
     query {
       allMarkdownRemark {
         edges {
-          previous {
-            id
-          }
           node {
             id
             frontmatter {
+              language
               course
               course_code
               test_obj {
@@ -86,9 +83,6 @@ exports.createPages = async ({ actions, graphql }) => {
               }
             }
           }
-          next {
-            id
-          }
         }
       }
     }
@@ -96,30 +90,60 @@ exports.createPages = async ({ actions, graphql }) => {
   const Courses = path.resolve("src/templates/courses.tsx");
 
 
-  const result = data.allMarkdownRemark.edges.map(({ previous, node, next }) => {
+  const result = data.allMarkdownRemark.edges
+                .reduce((acc, {node}) => {
+                        const language = node.frontmatter.language;
+                        node.frontmatter.courseId = node.id
+                        return (language in acc ? 
+                          acc[language].push(node.frontmatter) :
+                          acc[language] = [node.frontmatter]
+                        ) && acc}
+                , {})
 
-    node.frontmatter.previousId = previous !== null ? previous.id : null;
-    node.frontmatter.hasPrevious = previous !== null;
-    node.frontmatter.nextId = next !== null ? next.id : null;
-    node.frontmatter.hasNext = next !== null;
-    
-    node.frontmatter.courseId = node.id;
-    return node.frontmatter;
-  });
-  console.log(result);
-  result.forEach(({ course_code, courseId , previousId, hasPrevious, nextId, hasNext}) => {
-    createPage({
-      path: `/course/${course_code}`,
-      component: Courses,
-      context: {
-        courseId,
-        previousId, 
-        hasPrevious, 
-        nextId, 
-        hasNext
-      }
-    });
-  });
+
+  const exist = ({has, id, result, course }) => {
+    if(result) {
+      course[has] = true;
+      course[id] = result.courseId
+    } else {
+      course[has] = false
+    }
+  }
+  
+  Object.values(result).forEach( language => {
+    language.forEach( (course, index ) => {
+      exist({has:"hasPrevious", id:"previousId", "result":language[index - 1], course})
+      exist({has:"hasNext", id:"nextId", "result":language[index + 1], course})
+      console.log(course)
+      createPage({
+            path: `${course.language}/course/${course.course_code}`,
+            component: Courses,
+            context: {
+              courseId: course.courseId,
+              previousId: course.previousId, 
+              hasPrevious: course.hasPrevious, 
+              nextId: course.nextId, 
+              hasNext: course.hasNext,
+              language: course.language
+            }
+          });
+    })
+  })
+
+  // result.forEach(({ course_code, courseId , previousId, hasPrevious, nextId, hasNext, language}) => {
+  //   createPage({
+  //     path: `${language}/course/${course_code}`,
+  //     component: Courses,
+  //     context: {
+  //       courseId,
+  //       previousId, 
+  //       hasPrevious, 
+  //       nextId, 
+  //       hasNext,
+  //       language
+  //     }
+  //   });
+  // });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

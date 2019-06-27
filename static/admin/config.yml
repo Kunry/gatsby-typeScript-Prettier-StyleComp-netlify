@@ -28,6 +28,7 @@ collections:
         fields: 
           - { label: "Level 1", name: "test_level1_1", widget: "string"}
           - { label: "Level 2", name: "test_level1_2", widget: "string"}
+      - { label: "Body", name: "body", widget: "markdown"}
 
   - label: "Blog en Español"
     name: "spanish"
@@ -50,6 +51,8 @@ collections:
         fields: 
           - { label: "Level 1", name: "test_level1_1", widget: "string"}
           - { label: "Level 2", name: "test_level1_2", widget: "string"}
+      - { label: "Body", name: "body", widget: "markdown"}
+        
 
   - label: "blog en Français"
     name: "french"
@@ -72,6 +75,8 @@ collections:
         fields: 
           - { label: "Level 1", name: "test_level1_1", widget: "string"}
           - { label: "Level 2", name: "test_level1_2", widget: "string"}
+      - { label: "Body", name: "body", widget: "markdown"}
+        
 
   - label: "Blog auf Deutsch"
     name: "german"
@@ -94,6 +99,8 @@ collections:
         fields: 
           - { label: "Level 1", name: "test_level1_1", widget: "string"}
           - { label: "Level 2", name: "test_level1_2", widget: "string"}
+      - { label: "Body", name: "body", widget: "markdown"}
+        
 
   - label: "Blog em Português Brazilian"
     name: "brazilian"
@@ -116,6 +123,8 @@ collections:
         fields: 
           - { label: "Level 1", name: "test_level1_1", widget: "string"}
           - { label: "Level 2", name: "test_level1_2", widget: "string"}
+      - { label: "Body", name: "body", widget: "markdown"}
+        
 
   - label: "Blog em Português"
     name: "portuguese"
@@ -138,6 +147,8 @@ collections:
         fields: 
           - { label: "Level 1", name: "test_level1_1", widget: "string"}
           - { label: "Level 2", name: "test_level1_2", widget: "string"}
+      - { label: "Body", name: "body", widget: "markdown"}
+        
 
   - label: "Blog in het Nederlands"
     name: "dutch"
@@ -160,4 +171,6 @@ collections:
         fields: 
           - { label: "Level 1", name: "test_level1_1", widget: "string"}
           - { label: "Level 2", name: "test_level1_2", widget: "string"}
+      - { label: "Body", name: "body", widget: "markdown"}
+        
         
