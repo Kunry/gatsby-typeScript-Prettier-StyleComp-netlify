@@ -72,12 +72,22 @@ exports.createPages = async ({ actions, graphql }) => {
     query {
       allMarkdownRemark {
         edges {
+          previous {
+            id
+          }
           node {
             id
             frontmatter {
               course
               course_code
+              test_obj {
+                test_level1_1
+                test_level1_2
+              }
             }
+          }
+          next {
+            id
           }
         }
       }
@@ -85,17 +95,28 @@ exports.createPages = async ({ actions, graphql }) => {
   `);
   const Courses = path.resolve("src/templates/courses.tsx");
 
-  const result = data.allMarkdownRemark.edges.map(({ node }) => {
-    node.frontmatter.id = node.id;
+
+  const result = data.allMarkdownRemark.edges.map(({ previous, node, next }) => {
+
+    node.frontmatter.previousId = previous !== null ? previous.id : null;
+    node.frontmatter.hasPrevious = previous !== null;
+    node.frontmatter.nextId = next !== null ? next.id : null;
+    node.frontmatter.hasNext = next !== null;
+    
+    node.frontmatter.courseId = node.id;
     return node.frontmatter;
   });
   console.log(result);
-  result.forEach(({ course_code, id }) => {
+  result.forEach(({ course_code, courseId , previousId, hasPrevious, nextId, hasNext}) => {
     createPage({
       path: `/course/${course_code}`,
       component: Courses,
       context: {
-        courseId: id
+        courseId,
+        previousId, 
+        hasPrevious, 
+        nextId, 
+        hasNext
       }
     });
   });

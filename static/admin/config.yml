@@ -20,3 +20,12 @@ collections:
       - { label: "Course Code", name: "course_code", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Code", name: "pipedrive_product_code", widget: "number" }
+      
+      -  
+          label: Test Obj
+          name: test_obj
+          widget: list
+          fields: 
+            - { label: "Level 1", name: "test_level_1_1", widget: "string"}
+            - { label: "Level 2", name: "test_level_1_2", widget: "string"}
+        
