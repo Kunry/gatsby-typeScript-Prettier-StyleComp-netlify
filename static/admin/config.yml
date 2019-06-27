@@ -7,25 +7,47 @@ media_folder: static/assets
 public_folder: /assets
 
 collections:
-  - name: "blog"
-    label: "Blog"
+  - label: "Blog in English"
+    name: "english"
     folder: "src/pages/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: course
+    filet: {field: "language", value: "en"}
     editor:
      preview: false
     fields:
+      - { lavel: "Language", name: "language", widget: "select", options: ["es", "en"] }
       - { label: "Course", name: "course", widget: "string" }
       - { label: "Course Code", name: "course_code", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Code", name: "pipedrive_product_code", widget: "number" }
-      
-      -  
-          label: Test Obj
-          name: test_obj
-          widget: list
-          fields: 
-            - { label: "Level 1", name: "test_level_1_1", widget: "string"}
-            - { label: "Level 2", name: "test_level_1_2", widget: "string"}
+      - label: "Test Obj"
+        name: "test_obj"
+        widget: "object"
+        fields: 
+          - { label: "Level 1", name: "test_level_1_1", widget: "string"}
+          - { label: "Level 2", name: "test_level_1_2", widget: "string"}
+
+  - label: "Blog en Español"
+    name: "spanish"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: course
+    filet: {field: "language", value: "es"}
+    editor:
+     preview: false
+    fields:
+      - { lavel: "Lenguaje", name: "language", widget: "select", options: ["es", "en"] }
+      - { label: "Course", name: "course", widget: "string" }
+      - { label: "Course Code", name: "course_code", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Code", name: "pipedrive_product_code", widget: "number" }
+      - label: "Test Obj"
+        name: "test_obj"
+        widget: "object"
+        fields: 
+          - { label: "Level 1", name: "test_level_1_1", widget: "string"}
+          - { label: "Level 2", name: "test_level_1_2", widget: "string"}
         
