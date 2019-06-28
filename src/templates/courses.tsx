@@ -2,8 +2,9 @@ import React from "react";
 
 import { graphql, Link } from "gatsby";
 import { Header, Section, TitleCourse } from "./style";
-
+import "./style/style.css";
 interface Post {
+  html?: string;
   frontmatter: {
     course: string;
     pipedrive_product_code: number;
@@ -27,7 +28,14 @@ const Courses: React.SFC<{
           {course.course}
         </TitleCourse>
       </Header>
-      {course.description}
+      {/* {course.description} */}
+
+      <div
+        className="Prueba"
+        dangerouslySetInnerHTML={{
+          __html: data.markdownRemark.html || `<h1>NO BODY</h1>`
+        }}
+      />
       <Section>
         {[previous, next].map(
           courseObj =>
@@ -56,6 +64,7 @@ export const courseQuery = graphql`
     $hasNext: Boolean!
   ) {
     markdownRemark(id: { eq: $courseId }) {
+      html
       frontmatter {
         course
         pipedrive_product_code

@@ -1,0 +1,17 @@
+*{
+    margin: 1rem;
+}
+
+.Prueba{
+    text-align: center;
+}
+.Prueba ol{
+    text-align: justify;
+}
+.Prueba ol li{
+    margin: 1em;
+}
+ .Prueba img{
+     margin: 0;
+     width: 100%;
+ }

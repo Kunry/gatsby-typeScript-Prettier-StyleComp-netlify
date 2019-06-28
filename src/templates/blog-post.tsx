@@ -2,7 +2,7 @@ import { graphql } from "gatsby";
 import Image from "gatsby-image";
 import React from "react";
 
-export default ({ data }: any) => {
+const BlogPostTemplate = ({ data }: any) => {
   //   const blogPost = data.cms.blogPost;
   return (
     <h1>OK</h1>
@@ -18,6 +18,7 @@ export default ({ data }: any) => {
     // </div>
   );
 };
+export default BlogPostTemplate;
 
 // export const query = graphql`
 //   query($courseId: ID!) {

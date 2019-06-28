@@ -17,6 +17,4 @@ export const Section = styled.section`
   width: 100%;
 `;
 
-export const Text = styled.section`
-
-`
+export const Text = styled.section``;

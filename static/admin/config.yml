@@ -15,7 +15,7 @@ collections:
     identifier_field: course
     filter: {field: "language", value: "en"}
     editor:
-     preview: false
+     preview: true
     fields:
       - { lavel: "Language", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
       - { label: "Course", name: "course", widget: "string" }
@@ -54,7 +54,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown"}
         
 
-  - label: "blog en Français"
+  - label: "Blog en Français"
     name: "french"
     folder: "src/pages/blog"
     create: true
