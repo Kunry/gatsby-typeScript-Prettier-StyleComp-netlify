@@ -1,4 +1,5 @@
 require("dotenv").config();
+console.log(process.env.URL_API)
 module.exports = {
   siteMetadata: {
     title: "ahn.heejong",
