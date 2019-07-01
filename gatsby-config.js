@@ -1,5 +1,4 @@
-const fs = require("fs");
-const { buildSchema, buildClientSchema } = require("graphql")
+
 module.exports = {
   siteMetadata: {
     title: "ahn.heejong",
