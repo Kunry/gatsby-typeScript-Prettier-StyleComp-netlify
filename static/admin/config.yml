@@ -175,15 +175,15 @@ collections:
         
         
   - label: "Prueba organización"
-      name: "organizacion"
-      create: false
-      files:
-        - label: "Level1_1"
-          name: "level1_1"
-          file: "src/pages/blog/level1/level1_1.md"
-          fields: 
-            - { label: "name", name: "name", widget: "string"}
-        - label: "Level1_2"
-          name: "level1_2"
-          file: "src/pages/blog/level1/level1_2.md"
+    name: "organizacion"
+    create: false
+    files:
+      - label: "Level1_1"
+        name: "level1_1"
+        file: "src/pages/blog/level1/level1_1.md"
+        fields: 
+          - { label: "name", name: "name", widget: "string"}
+      - label: "Level1_2"
+        name: "level1_2"
+        file: "src/pages/blog/level1/level1_2.md"
           

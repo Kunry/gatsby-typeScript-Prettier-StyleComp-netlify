@@ -114,7 +114,6 @@ exports.createPages = async ({ actions, graphql }) => {
     language.forEach( (course, index ) => {
       exist({has:"hasPrevious", id:"previousId", "result":language[index - 1], course})
       exist({has:"hasNext", id:"nextId", "result":language[index + 1], course})
-      console.log(course)
       createPage({
             path: `${course.language}/course/${course.course_code}`,
             component: Courses,
