@@ -186,6 +186,7 @@ collections:
       - label: "Level1_2"
         name: "level1_2"
         file: "src/pages/blog/level1/level1_2.md"
+        fields:
           - { label: "name2", name: "name2", widget: "string"}
 
           
