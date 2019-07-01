@@ -1,7 +1,6 @@
 import React from "react";
 
 import Layout from "../components/Layout";
-import PageHelmet from "../components/PageHelmet";
 
 import { push } from "gatsby";
 interface State {
@@ -32,16 +31,10 @@ class NotFoundPage extends React.Component<{}, State> {
   public render() {
     return (
       <Layout>
-        <PageHelmet
-          title="ahn.heejong"
-          description="404 Not Found"
-          url="https://ahnheejong.name/404"
-        />
-        <h1 style={{ marginBottom: "1em" }}>404 Not Found</h1>
+        <h1>404 Not Found</h1>
         <div>
-          막다른 골목에 다다르셨어요.
           <br />
-          {this.state.timeout}초 후 대문으로 이동합니다.
+          {this.state.timeout}¡
         </div>
       </Layout>
     );

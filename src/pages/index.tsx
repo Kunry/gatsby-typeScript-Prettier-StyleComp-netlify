@@ -16,13 +16,7 @@ interface Props {
 const IndexPage: React.SFC<Props> = props => {
   return (
     <React.Fragment>
-      <Layout>
-        <PageHelmet
-          title="ahn.heejong"
-          description="한국에 살며 웹사이트를 만드는 안희종입니다."
-          url="https://ahnheejong.name/"
-        />
-      </Layout>
+      <h1>Inicio</h1>
     </React.Fragment>
   );
 };

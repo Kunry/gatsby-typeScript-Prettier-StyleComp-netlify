@@ -1,3 +1,5 @@
+const fs = require("fs");
+const { buildSchema, buildClientSchema } = require("graphql")
 module.exports = {
   siteMetadata: {
     title: "ahn.heejong",
@@ -30,6 +32,14 @@ module.exports = {
           }
         ]
       }
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "Api",
+        fieldName: "api",
+        url: "http://localhost:3000/graphql"
+      },
     },
     // {
     //   resolve: "gatsby-source-filesystem",
