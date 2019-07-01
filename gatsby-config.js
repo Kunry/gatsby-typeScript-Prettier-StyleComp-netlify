@@ -1,4 +1,4 @@
-
+require("dotenv").config();
 module.exports = {
   siteMetadata: {
     title: "ahn.heejong",
@@ -37,7 +37,7 @@ module.exports = {
       options: {
         typeName: "Api",
         fieldName: "api",
-        url: "http://localhost:3000/graphql"
+        url: process.env.URL_API
       },
     },
     // {
