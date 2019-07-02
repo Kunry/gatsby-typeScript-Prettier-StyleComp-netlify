@@ -202,4 +202,4 @@ collections:
             name: "campus"
             widget: "list"
             fields :
-            {label: Name, name: name, widget: string}
+              - {label: Name, name: name, widget: string}
