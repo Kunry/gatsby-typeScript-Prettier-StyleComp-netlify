@@ -195,7 +195,10 @@ collections:
       preview: true
     files:
         - label: "Nuestros Campus"
-          name: "campus"
+          name: "nuestros_campus"
           file: "content/Home/Footer.md"
-          widget: "list"
-          field: {label: Name, name: name, widget: string}
+          fields:
+            - label: "Nuestros Campus"
+              name: "campus"
+              widget: "list"
+              field: {label: Name, name: name, widget: string}
