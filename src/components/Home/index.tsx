@@ -37,7 +37,12 @@ const Home: React.SFC<Props> = ({ data }) => {
     <>
       <Header
         courses={[{ title: "web" }]}
-        campus={data.api.campuses}
+        campus={
+          [
+            { id: "1", name: "Madrid" },
+            { id: "2", name: "Barcelona" }
+          ] /* data.api.campuses */
+        }
         language="en"
       />
       <Footer data={data.footer} />
@@ -49,12 +54,6 @@ export default Home;
 
 export const queryHome = graphql`
   query Home {
-    api: api {
-      campuses {
-        id
-        name
-      }
-    }
     footer: file(relativePath: { regex: "/(Footer)/" }) {
       childMarkdownRemark {
         frontmatter {
@@ -64,3 +63,9 @@ export const queryHome = graphql`
     }
   }
 `;
+// api: api {
+//   campuses {
+//     id
+//     name
+//   }
+// }

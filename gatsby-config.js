@@ -40,7 +40,7 @@ module.exports = {
       options: {
         typeName: "Api",
         fieldName: "api",
-        url: "http://localhost:3000/graphql"//process.env.URL_API
+        url: /* "http://localhost:3000/graphql" */process.env.URL_API
       },
     },
     // {
