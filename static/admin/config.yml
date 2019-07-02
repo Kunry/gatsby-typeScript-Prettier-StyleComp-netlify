@@ -196,7 +196,6 @@ collections:
     folder: "content/Home/"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    identifier_field: course
     fields:
         - label: "Nuestros Campus"
           name: "campus"

@@ -1,6 +1,6 @@
 ---
 campus:
-      - name: asdasd
-      - name: asd
+      - asdasdasd
+      - asdasdas
 ---
 
