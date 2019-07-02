@@ -196,7 +196,7 @@ collections:
     folder: "content/Home/"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    identifier_field: home-footer
+    identifier_field: campus
     fields:
         - label: "Nuestros Campus"
           name: "campus"
