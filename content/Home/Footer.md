@@ -1,5 +1,5 @@
 ---
-campus:
-  name: Madrid
+campus: asdasd
+
 ---
 
