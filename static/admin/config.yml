@@ -189,4 +189,13 @@ collections:
         fields:
           - { label: "name2", name: "name2", widget: "string"}
 
-          
+  - label: "Home Español"
+    name: "home_español"
+    editor:
+      preview: true
+    files:
+      - label: "Footer"
+        name: "footer"
+        file: "content/Home/Footer.md"
+        fields:
+          - { label: "Nuestros Campus", name: "campus", widget: "list"}

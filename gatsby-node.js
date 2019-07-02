@@ -32,41 +32,17 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 // }
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
-  const PruebaParams = path.resolve("src/components/PruebaParams.tsx");
-  const router = [
-    {
-      routes: "Madrid",
-      context: {
-        id: "Madrid"
-      }
-    },
-    {
-      routes: "Barcelona",
-      context: {
-        id: "Barcelona"
-      }
-    },
-    {
-      routes: "Berlin",
-      context: {
-        id: "Berlin"
-      }
-    }
-  ];
+  
+
+  const Home = path.resolve("src/components/Home/index.tsx");
   createPage({
-    path: "/prueba/pepe",
-    component: PruebaParams,
-    context: {
-      id: "Prueba"
-    }
-  });
-  router.forEach(({ routes, context }) => {
-    createPage({
-      path: `/ciudad/${routes}`,
-      component: PruebaParams,
-      context
-    });
-  });
+    path: "es",
+    component: Home,
+    context:{}
+  })
+
+
+
   const { data } = await graphql(`
     query {
       allMarkdownRemark {
@@ -88,7 +64,7 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `);
   const Courses = path.resolve("src/templates/courses.tsx");
-
+  
 
   const result = data.allMarkdownRemark.edges
                 .reduce((acc, {node}) => {

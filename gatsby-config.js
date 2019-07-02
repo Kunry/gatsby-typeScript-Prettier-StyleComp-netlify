@@ -1,11 +1,6 @@
 require("dotenv").config();
 console.log(process.env.URL_API)
 module.exports = {
-  siteMetadata: {
-    title: "ahn.heejong",
-    description: "한국에 살며 웹사이트를 만드는 안희종입니다.",
-    siteUrl: "https://ahnheejong.name"
-  },
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
@@ -24,6 +19,13 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/content/Home`,
+        name: "home"
+      }
+    },
+    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
@@ -38,7 +40,7 @@ module.exports = {
       options: {
         typeName: "Api",
         fieldName: "api",
-        url: process.env.URL_API
+        url: "http://localhost:3000/graphql"//process.env.URL_API
       },
     },
     // {
