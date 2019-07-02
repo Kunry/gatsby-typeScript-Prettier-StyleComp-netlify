@@ -1,5 +1,7 @@
 ---
 campus:
   - sdasdsd
+  - as
+  - asdasd
 ---
 
