@@ -1,0 +1,6 @@
+---
+campus:
+  - asdas
+  - asdasd
+---
+
