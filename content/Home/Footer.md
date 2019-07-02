@@ -1,6 +1,7 @@
 ---
 campus:
-  - Madrid
   - Barcelona
+  - Miami
+  - Madrid
 ---
 
