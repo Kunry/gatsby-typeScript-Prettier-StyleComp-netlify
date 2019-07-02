@@ -1,7 +1,5 @@
 ---
 campus:
-  - sdasdsd
-  - as
-  - asdasd
+  name: Madrid
 ---
 
