@@ -1,6 +1,6 @@
 ---
 campus:
-      - asdasdasd
-      - asdasdas
+  - Madrid
+  - Barcelona
 ---
 

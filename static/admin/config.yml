@@ -193,12 +193,9 @@ collections:
     name: "home_español"
     editor:
       preview: true
-    folder: "content/Home/"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    identifier_field: campus
-    fields:
+    files:
         - label: "Nuestros Campus"
           name: "campus"
+          file: "content/Home/Footer.md"
           widget: "list"
           field: {label: Name, name: name, widget: string}
