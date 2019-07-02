@@ -1,7 +1,6 @@
 ---
-campus: 
+campus:
       - name: asdasd
       - name: asd
-
 ---
 
