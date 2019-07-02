@@ -1,5 +1,7 @@
 ---
-campus: asdasd
+campus: 
+        - asdasd
+        - asd
 
 ---
 

@@ -4,7 +4,7 @@ import style from "styled-components";
 import Props from "../interface";
 
 interface PropFooter {
-  campus: string[];
+  campus: Array<{ name: string; id: string }>;
 }
 
 const Footer: React.SFC<Props<PropFooter>> = ({ data }) => {
@@ -12,7 +12,7 @@ const Footer: React.SFC<Props<PropFooter>> = ({ data }) => {
   return (
     <>
       <ul>
-        {campus.map(name => (
+        {campus.map(({ name }) => (
           <LI key={name}> {name}</LI>
         ))}
       </ul>
