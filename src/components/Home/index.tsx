@@ -57,7 +57,7 @@ export const queryHome = graphql`
     footer: file(relativePath: { regex: "/(Footer)/" }) {
       childMarkdownRemark {
         frontmatter {
-          text
+          campus
         }
       }
     }

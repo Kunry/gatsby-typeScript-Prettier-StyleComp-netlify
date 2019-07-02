@@ -198,4 +198,8 @@ collections:
         name: "footer"
         file: "content/Home/Footer.md"
         fields:
-          - { label: "Nuestros Campus", name: "campus", widget: "list"}
+          - label: "Nuestros Campus"
+            name: "campus"
+            widget: "list"
+            fields :
+            {label: Name, name: name, widget: string}

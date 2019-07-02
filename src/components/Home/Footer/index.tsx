@@ -1,5 +1,6 @@
 import { graphql } from "gatsby";
 import React from "react";
+import style from "styled-components";
 import Props from "../interface";
 
 interface PropFooter {
@@ -10,7 +11,11 @@ const Footer: React.SFC<Props<PropFooter>> = ({ data }) => {
   const { campus } = data.childMarkdownRemark.frontmatter;
   return (
     <>
-      <p>{campus}</p>
+      <ul>
+        {campus.map(name => (
+          <LI key={name}> {name}</LI>
+        ))}
+      </ul>
     </>
   );
 };
@@ -27,3 +32,7 @@ export default Footer;
 //     }
 //   }
 // `;
+
+const LI = style.li`
+  margin: 10px;
+`;
