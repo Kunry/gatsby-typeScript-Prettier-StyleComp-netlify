@@ -1,3 +1,5 @@
 ---
-  text: "Fotter"
+campus:
+  - sdasdsd
 ---
+
