@@ -200,5 +200,5 @@ collections:
         fields:
           - label: "Nuestros Campus"
             name: "campus"
-            widget: "object"
+            widget: "list"
             field: {label: Name, name: name, widget: string}
