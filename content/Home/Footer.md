@@ -1,7 +1,6 @@
 ---
-campus: 
-        - asdasd
-        - asd
-
+campus:
+  - asdasd
+  - asd
 ---
 
