@@ -193,12 +193,12 @@ collections:
     name: "home_español"
     editor:
       preview: true
-    files:
-      - label: "Footer"
-        name: "footer"
-        file: "content/Home/Footer.md"
-        fields:
-          - label: "Nuestros Campus"
-            name: "campus"
-            widget: "list"
-            field: {label: Name, name: name, widget: string}
+    folder: "content/Home/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: course
+    fields:
+        - label: "Nuestros Campus"
+          name: "campus"
+          widget: "list"
+          field: {label: Name, name: name, widget: string}
