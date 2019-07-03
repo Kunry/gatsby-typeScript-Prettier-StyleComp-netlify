@@ -19,7 +19,12 @@ const Header: React.SFC = () => {
             careerServices
             alumni
             hireTalent
-            languages
+            languages {
+              language {
+                icon
+                language
+              }
+            }
           }
         }
       }
@@ -30,7 +35,7 @@ const Header: React.SFC = () => {
     locations,
     careerServices,
     alumni,
-    language
+    languages
   } = result.header.childMarkdownRemark.frontmatter;
   // console.log(result.header.childMarkdownRemark.frontmatter);
   return (
