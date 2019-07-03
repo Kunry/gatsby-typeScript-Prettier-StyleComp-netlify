@@ -148,21 +148,18 @@ collections:
           - { label: "Level 1", name: "test_level1_1", widget: "string"}
           - { label: "Level 2", name: "test_level1_2", widget: "string"}
       - { label: "Body", name: "body", widget: "markdown"}
-        
-  - label: "Testimonials"
-    name: "testimonials"
-    widget: "list"
-    identifier_field: course
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    folder: "src/pages/blog"
-    fields:
-      - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
-      - label: Author
-        name: author
-        widget: object
+      - label: "Testimonials"
+        name: "testimonials"
+        widget: "list"
         fields:
-          - {label: Name, name: name, widget: string, default: "Emmet"}
-          - {label: Avatar, name: avatar, widget: image, default: "/img/emmet.jpg"}
+          - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
+          - label: Author
+            name: author
+            widget: object
+            fields:
+              - {label: Name, name: name, widget: string, default: "Emmet"}
+              - {label: Avatar, name: avatar, widget: image, default: "/img/emmet.jpg"}
+        
       
   - label: "Blog in het Nederlands"
     name: "dutch"
