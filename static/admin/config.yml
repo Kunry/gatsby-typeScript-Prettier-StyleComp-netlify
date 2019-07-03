@@ -191,15 +191,15 @@ collections:
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Code", name: "pipedrive_product_code", widget: "number" }
       - label: "Languages"
-          name: "languages"
-          widget: "list"
-          field: 
-            label: "Name"
-            name: "Language"
-            widget: "object"
-            fields:
-              - {label: Language, name: language, widget: string}
-              - {label: Icon, name: icon, widget: string}
+        name: "languages"
+        widget: "list"
+        field: 
+          label: "Name"
+          name: "Language"
+          widget: "object"
+          fields:
+            - {label: Language, name: language, widget: string}
+            - {label: Icon, name: icon, widget: string}
       - label: "Test Obj"
         name: "test_obj"
         widget: "object"
