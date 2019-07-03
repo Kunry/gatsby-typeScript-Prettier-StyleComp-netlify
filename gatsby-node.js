@@ -68,16 +68,16 @@ exports.createPages = async ({ actions, graphql }) => {
       footer: file(relativePath: { regex: "/(Footer)/" }) {
         childMarkdownRemark {
           frontmatter {
-            campus
+            locations
           }
         }
       }
     }
   `)
-  console.log(router.data.footer.childMarkdownRemark.frontmatter.campus)
+  console.log(router.data.footer.childMarkdownRemark.frontmatter.locations)
   //.footer.childMarkdownRemark.frontmatter.campus;
 
-  router.data.footer.childMarkdownRemark.frontmatter.campus.forEach((name) => {
+  router.data.footer.childMarkdownRemark.frontmatter.locations.forEach((name) => {
     createPage({
       path: `/es/ciudad/${name}`,
       component: PruebaParams,

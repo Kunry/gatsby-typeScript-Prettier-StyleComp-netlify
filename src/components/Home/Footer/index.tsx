@@ -9,21 +9,22 @@ interface PropFooter {
 
 const Footer: React.SFC<any /* Props<PropFooter> */> = () => {
   const data = useStaticQuery(graphql`
-    query Home {
+    query Footer {
       footer: file(relativePath: { regex: "/(Footer)/" }) {
         childMarkdownRemark {
           frontmatter {
-            campus
+            locations
           }
         }
       }
     }
   `);
-  const { campus } = data.footer.childMarkdownRemark.frontmatter;
+  const { locations } = data.footer.childMarkdownRemark.frontmatter;
+
   return (
     <>
       <ul>
-        {campus.map((name: any) => (
+        {locations.map((name: string) => (
           <LI key={name}>
             <LINK to={`es/ciudad/${name}`}> {name}</LINK>
           </LI>

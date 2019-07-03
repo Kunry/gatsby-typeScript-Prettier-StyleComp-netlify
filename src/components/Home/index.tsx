@@ -33,16 +33,7 @@ interface Props {
 const Home: React.SFC<Props> = ({ data }) => {
   return (
     <>
-      <Header
-        courses={[{ title: "web" }]}
-        campus={
-          [
-            { id: "1", name: "Madrid" },
-            { id: "2", name: "Barcelona" }
-          ] /* data.api.campuses */
-        }
-        language="en"
-      />
+      <Header />
       <Footer />
     </>
   );

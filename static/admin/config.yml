@@ -238,4 +238,10 @@ collections:
           - label: "Languages"
             name: "languages"
             widget: "list"
-            field: {label: Name, name: language, widget: string}
+            field: 
+              label: "Name"
+              name: "Language"
+              widget: "object"
+              fields:
+                - {label: Language, name: language, widget: string}
+                - {label: Icon, name: icon, widget: string}
