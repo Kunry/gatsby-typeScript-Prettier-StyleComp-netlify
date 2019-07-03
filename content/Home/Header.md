@@ -13,5 +13,8 @@ languages:
   - language:
       icon: "\U0001F1EA\U0001F1F8"
       language: es
+  - language:
+      icon: "\U0001F1FA\U0001F1F8"
+      language: en
 ---
 
