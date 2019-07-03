@@ -9,5 +9,8 @@ locations:
 careerServices: Career services
 alumni: alumni
 hireTalent: Hire Talent
+languages:
+  - es
+  - en
 ---
 
