@@ -151,14 +151,13 @@ collections:
       - label: "Testimonials"
         name: "testimonials"
         widget: "list"
-        fields:
-          - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
+        field:
           - label: Author
             name: author
             widget: object
             fields:
-              - {label: Name, name: name, widget: string, default: "Emmet"}
-              - {label: Avatar, name: avatar, widget: image, default: "/img/emmet.jpg"}
+              - {label: Language, name: language, widget: string, default: "pepe"}
+              - {label: Icon, name: icon, widget: string, default: "pepe"}
         
       
   - label: "Blog in het Nederlands"
