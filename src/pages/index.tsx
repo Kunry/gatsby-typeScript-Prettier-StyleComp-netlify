@@ -25,19 +25,19 @@ export default IndexPage;
 
 import { graphql } from "gatsby";
 
-export const pageQuery = graphql`
-  query PruebaQuery {
-    allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            course
-          }
-        }
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query PruebaQuery {
+//     allMarkdownRemark {
+//       edges {
+//         node {
+//           frontmatter {
+//             course
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 // export const pageQuery = graphql`
 //   query IndexQuery {

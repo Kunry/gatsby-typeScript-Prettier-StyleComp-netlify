@@ -1,4 +1,4 @@
-import { graphql } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
 import style from "styled-components";
 import Props from "../interface";
@@ -7,13 +7,26 @@ interface PropFooter {
   campus: Array<{ name: string; id: string }>;
 }
 
-const Footer: React.SFC<Props<PropFooter>> = ({ data }) => {
-  const { campus } = data.childMarkdownRemark.frontmatter;
+const Footer: React.SFC<any /* Props<PropFooter> */> = () => {
+  const data = useStaticQuery(graphql`
+    query Home {
+      footer: file(relativePath: { regex: "/(Footer)/" }) {
+        childMarkdownRemark {
+          frontmatter {
+            campus
+          }
+        }
+      }
+    }
+  `);
+  const { campus } = data.footer.childMarkdownRemark.frontmatter;
   return (
     <>
       <ul>
-        {campus.map(({ name }) => (
-          <LI key={name}> {name}</LI>
+        {campus.map((name: any) => (
+          <LI key={name}>
+            <LINK to={`es/ciudad/${name}`}> {name}</LINK>
+          </LI>
         ))}
       </ul>
     </>
@@ -35,4 +48,7 @@ export default Footer;
 
 const LI = style.li`
   margin: 10px;
+`;
+const LINK = style(Link)`
+  color:red;
 `;

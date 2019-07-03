@@ -35,14 +35,15 @@ module.exports = {
         ]
       }
     },
-    {
-      resolve: "gatsby-source-graphql",
-      options: {
-        typeName: "Api",
-        fieldName: "api",
-        url: /* "http://localhost:3000/graphql" */process.env.URL_API
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-graphql",
+    //   options: {
+    //     typeName: "Api",
+    //     fieldName: "api",
+    //     url: /* "http://localhost:3000/graphql" */process.env.URL_API
+    //     refetchInterval: 60
+    //   },
+    // },
     // {
     //   resolve: "gatsby-source-filesystem",
     //   options: {

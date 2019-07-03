@@ -190,15 +190,51 @@ collections:
           - { label: "name2", name: "name2", widget: "string"}
 
   - label: "Home Español"
-    name: "home_español"
-    editor:
-      preview: true
-    files:
-        - label: "Nuestros Campus"
-          name: "nuestros_campus"
-          file: "content/Home/Footer.md"
-          fields:
-            - label: "Nuestros Campus"
-              name: "campus"
-              widget: "list"
-              field: {label: Name, name: name, widget: string}
+      name: "home_español"
+      editor:
+        preview: true
+          - label: "Footer"
+            name: "footer"
+            file: "content/Home/Footer.md"
+            fields:
+              - label: "Company"
+                name: "company"
+                widget: "list"
+                field: {label: Name, name: company, widget: string}
+              - label: "More info"
+                name: "info"
+                widget: "list"
+                field: {label: Name, name: info, widget: string}
+              - label: "Follow us"
+                name: "follow"
+                widget: "list"
+                field: {label: Name, name: follow, widget: string}
+              - label: "Our locations"
+                name: "locations"
+                widget: "list"
+                field: {label: Name, name: location, widget: string}
+          - label: "Header"
+            name: "header"
+            file: "content/Home/Header.md"
+            fields:
+              - label: "Courses"
+                name: "courses"
+                widget: "list"
+                field: {label: Name, name: course, widget: string}
+              - label: "Locations"
+                name: "locations"
+                widget: "list"
+                field: {label: Name, name: location, widget: string}
+              - label: "Career Services"
+                name: "careerServices"
+                widget: "string"
+              - label: "Alumi"
+                name: "alumni"
+                widget: "string"
+              - label: "Hire Talent"
+                name: "hireTalent"
+                widget: "string"
+              - label: "Languages"
+                name: "languages"
+                widget: "list"
+                field: {label: Name, name: language, widget: string}

@@ -31,8 +31,6 @@ interface Props {
 }
 
 const Home: React.SFC<Props> = ({ data }) => {
-  // tslint:disable-next-line: no-console
-  console.info(data);
   return (
     <>
       <Header
@@ -45,24 +43,24 @@ const Home: React.SFC<Props> = ({ data }) => {
         }
         language="en"
       />
-      <Footer data={data.footer} />
+      <Footer />
     </>
   );
 };
 
 export default Home;
 
-export const queryHome = graphql`
-  query Home {
-    footer: file(relativePath: { regex: "/(Footer)/" }) {
-      childMarkdownRemark {
-        frontmatter {
-          campus
-        }
-      }
-    }
-  }
-`;
+// export const queryHome = graphql`
+//   query Home {
+//     footer: file(relativePath: { regex: "/(Footer)/" }) {
+//       childMarkdownRemark {
+//         frontmatter {
+//           campus
+//         }
+//       }
+//     }
+//   }
+// `;
 // api: api {
 //   campuses {
 //     id
