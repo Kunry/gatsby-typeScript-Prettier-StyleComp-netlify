@@ -149,31 +149,20 @@ collections:
           - { label: "Level 2", name: "test_level1_2", widget: "string"}
       - { label: "Body", name: "body", widget: "markdown"}
         
-  - label: "Blog in het Prueba"
-    name: "prueba"
-    folder: "src/pages/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  - label: "Testimonials"
+    name: "testimonials"
+    widget: "list"
     identifier_field: course
-    filter: {field: "language", value: "pp"}
-    editor:
-     preview: false
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    folder: "src/pages/blog"
     fields:
-      - { lavel: "Language", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl", "pp"] }
-      - { label: "Course", name: "course", widget: "string" }
-      - { label: "Course Code", name: "course_code", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Code", name: "pipedrive_product_code", widget: "number" }
-      - label: "Languages"
-        name: "languages"
-        widget: "list"
-        field: 
-          label: "Name"
-          name: "Language"
-          widget: "object"
-          fields:
-            - {label: Language, name: language, widget: string}
-            - {label: Icon, name: icon, widget: string}
+      - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
+      - label: Author
+        name: author
+        widget: object
+        fields:
+          - {label: Name, name: name, widget: string, default: "Emmet"}
+          - {label: Avatar, name: avatar, widget: image, default: "/img/emmet.jpg"}
       
   - label: "Blog in het Nederlands"
     name: "dutch"
