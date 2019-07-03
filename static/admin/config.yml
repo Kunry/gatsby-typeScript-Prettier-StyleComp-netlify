@@ -151,13 +151,12 @@ collections:
       - label: "Testimonials"
         name: "testimonials"
         widget: "list"
-        field:
-          - label: Author
-            name: author
-            widget: object
-            fields:
-              - {label: Language, name: language, widget: string, default: "pepe"}
-              - {label: Icon, name: icon, widget: string, default: "pepe"}
+        field: label: Author
+                name: author
+                widget: object
+                fields:
+                  - {label: Language, name: language, widget: string, default: "pepe"}
+                  - {label: Icon, name: icon, widget: string, default: "pepe"}
         
       
   - label: "Blog in het Nederlands"
