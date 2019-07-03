@@ -148,17 +148,6 @@ collections:
           - { label: "Level 1", name: "test_level1_1", widget: "string"}
           - { label: "Level 2", name: "test_level1_2", widget: "string"}
       - { label: "Body", name: "body", widget: "markdown"}
-      - label: "Languages"
-        name: "languages"
-        widget: "list"
-        fields:
-          - label: Author
-            name: author
-            widget: object
-            fields:
-              - {label: Language, name: language, widget: string, default: "pepe"}
-              - {label: Icon, name: icon, widget: string, default: "pepe"}
-        
       
   - label: "Blog in het Nederlands"
     name: "dutch"
@@ -258,10 +247,11 @@ collections:
           - label: "Languages"
             name: "languages"
             widget: "list"
-            field: 
-              label: "Name"
-              name: "Language"
-              widget: "object"
-              fields:
-                - {label: Language, name: language, widget: string}
-                - {label: Icon, name: icon, widget: string}
+            fields:
+              - label: Language
+                name: language
+                widget: object
+                fields:
+                  - {label: Language, name: language, widget: string, default: "pepe"}
+                  - {label: Icon, name: icon, widget: string, default: "pepe"}
+        
