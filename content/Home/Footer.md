@@ -1,7 +1,6 @@
 ---
-campus:
-  - Barcelona
-  - Miami
+locations:
   - Madrid
+  - Barcelona
 ---
 
