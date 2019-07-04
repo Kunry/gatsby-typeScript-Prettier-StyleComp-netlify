@@ -199,6 +199,7 @@ collections:
           - { label: "name2", name: "name2", widget: "string"}
 
   - label: "Home Español"
+    delete: false
     editor:
       preview: true
     name: "home_español"

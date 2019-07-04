@@ -2,13 +2,16 @@ import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 
+// interface Props {
+//   courses: [object];
+//   campus: Array<{ id: string; name: string }>;
+//   language: string;
+// }
 interface Props {
-  courses: [object];
-  campus: Array<{ id: string; name: string }>;
   language: string;
 }
 
-const Header: React.SFC = () => {
+const Header: React.SFC<Props> = props => {
   const result = useStaticQuery(graphql`
     query Header {
       header: file(relativePath: { regex: "/(Header)/" }) {
@@ -38,6 +41,12 @@ const Header: React.SFC = () => {
     languages
   } = result.header.childMarkdownRemark.frontmatter;
   // console.log(result.header.childMarkdownRemark.frontmatter);
+
+  const flag = languages.find(
+    ({ language }: { language: { language: string; icon: string } }) =>
+      props.language === language.language
+  ).language.icon;
+  console.log(flag)
   return (
     <>
       <HEADER>
@@ -58,6 +67,20 @@ const Header: React.SFC = () => {
                 {locations.map((location: string) => (
                   <p key={location}>{location}</p>
                 ))}
+              </UL_LIST>
+            </LI_HEADER>
+            <LI_HEADER hover="Locations">
+              <p>{flag}</p>
+              <UL_LIST className="Locations">
+                {languages.map(
+                  ({
+                    language
+                  }: {
+                    language: { language: string; icon: string };
+                  }) => (
+                    <p key={language.language}>{language.icon}</p>
+                  )
+                )}
               </UL_LIST>
             </LI_HEADER>
           </UL_HEADER>

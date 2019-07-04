@@ -38,7 +38,9 @@ exports.createPages = async ({ actions, graphql }) => {
   createPage({
     path: "es",
     component: Home,
-    context:{}
+    context:{
+      language: "es"
+    }
   })
 
   const PruebaParams = path.resolve("src/components/PruebaParams.tsx");
@@ -81,7 +83,9 @@ exports.createPages = async ({ actions, graphql }) => {
     createPage({
       path: `/es/ciudad/${name}`,
       component: PruebaParams,
-      context:{}
+      context:{
+        language: "es"
+      }
     });
   });
 

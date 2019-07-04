@@ -2,38 +2,43 @@ import { graphql } from "gatsby";
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+// interface Props {
+//   data: {
+//     allMarkdownRemark: {
+//       edges: [
+//         {
+//           node: {
+//             frontmatter: {
+//               course: string;
+//               campus: {
+//                 name?: string;
+//               };
+//             };
+//           };
+//         }
+//       ];
+//     };
+//     api: {
+//       campuses: [
+//         {
+//           id: string;
+//           name: string;
+//         }
+//       ];
+//     };
+//     footer: any;
+//   };
+// }
 interface Props {
-  data: {
-    allMarkdownRemark: {
-      edges: [
-        {
-          node: {
-            frontmatter: {
-              course: string;
-              campus: {
-                name?: string;
-              };
-            };
-          };
-        }
-      ];
-    };
-    api: {
-      campuses: [
-        {
-          id: string;
-          name: string;
-        }
-      ];
-    };
-    footer: any;
+  pathContext: {
+    language: string;
   };
 }
 
-const Home: React.SFC<Props> = ({ data }) => {
+const Home: React.SFC<Props> = props => {
   return (
     <>
-      <Header />
+      <Header language={props.pathContext.language} />
       <Footer />
     </>
   );
