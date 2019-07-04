@@ -192,6 +192,7 @@ collections:
         file: "src/pages/blog/level1/level1_1.md"
         fields: 
           - { label: "name", name: "name", widget: "string"}
+          - { label: "image", name: "img", widget: "image"}
       - label: "Level1_2"
         name: "level1_2"
         file: "src/pages/blog/level1/level1_2.yml"
@@ -255,4 +256,5 @@ collections:
                 fields:
                   - {label: Language, name: language, widget: string, default: "pepe"}
                   - {label: Icon, name: icon, widget: string, default: "pepe"}
+                  - {label: Img, name: img, widget: string, default: "pepe"}
         
