@@ -2,42 +2,42 @@ import { graphql } from "gatsby";
 import Image from "gatsby-image";
 import React from "react";
 
-const BlogPostTemplate = ({ data }: any) => {
-  //   const blogPost = data.cms.blogPost;
+const BlogPostTemplate = ({ title, author, date, body, html }: any) => {
   return (
-    <h1>OK</h1>
-    // <div>
-    //   {blogPost.titleImage &&
-    //     blogPost.titleImage.imageFile &&
-    //     blogPost.titleImage.imageFile.childImageSharp && (
-    //       <Image fixed={blogPost.titleImage.imageFile.childImageSharp.fixed} />
-    //     )}
-    //   <h1>{blogPost.title}</h1>
-    //   <div>Posted at: {blogPost.createdAt}</div>
-    //   <div dangerouslySetInnerHTML={{ __html: blogPost.post }} />
-    // </div>
+    <div className="docs page">
+      <div className="container">
+        <article className="blog-content" id="blog-content">
+          <div className="blog-post-header">
+            <h1>{title}</h1>
+            <p className="meta-info">
+              by {author} on {date}
+            </p>
+          </div>
+          {body ? body : <div dangerouslySetInnerHTML={{ __html: html }} />}
+        </article>
+      </div>
+    </div>
   );
 };
 export default BlogPostTemplate;
 
-// export const query = graphql`
-//   query($courseId: ID!) {
-//     cms {
-//       blogPost(where: { id: $blogId }) {
-//         title
-//         createdAt
-//         post
-//         titleImage {
-//           url
-//           imageFile {
-//             childImageSharp {
-//               fixed {
-//                 ...GatsbyImageSharpFixed
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const pageQuery = graphql`
+  query blogPost($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        description
+        # meta_description
+        date(formatString: "MMMM D, YYYY")
+        author
+        twitter_image
+      }
+      html
+    }
+  }
+`;

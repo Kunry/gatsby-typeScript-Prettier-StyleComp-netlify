@@ -1,6 +1,34 @@
 require("dotenv").config();
 console.log(process.env.URL_API)
 module.exports = {
+  siteMetadata: {
+    title: 'Netlify CMS | Open-Source Content Management System',
+    description: 'Open source content management for your Git workflow',
+    menu: {
+      docs: [
+        {
+          name: 'start',
+          title: 'Quick Start',
+        },
+        {
+          name: 'reference',
+          title: 'Reference',
+        },
+        {
+          name: 'media',
+          title: 'Media',
+        },
+        {
+          name: 'guides',
+          title: 'Guides',
+        },
+        {
+          name: 'contributing',
+          title: 'Contributing',
+        },
+      ],
+    },
+  },
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",

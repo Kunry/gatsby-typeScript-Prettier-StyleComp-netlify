@@ -7,13 +7,13 @@ const BlogPostPreview = ({ entry, widgetFor }) => {
   
   console.log("entra");
   console.log(entry, widgetFor);
+  const data = entry.get('data');
   return (
   <BlogPostTemplate
-    content={widgetFor("body")}
-    description={entry.getIn(["data", "description"])}
-    course={entry.getIn(["data", "course"])}
-    course_code={entry.getIn(["data", "course_code"])}
-    pipedrive_product_code={entry.getIn(["data", "pipedrive_product_code"])}
+    title={data.get(["title"])}
+    author={data.get(["author"])}
+    date={data.get(["date"]).format("MMMM D, YYYY")}
+    body={widgetFor("body")}
   />
 )};
 
