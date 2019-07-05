@@ -10,10 +10,10 @@ import './css/docs.css';
 import './css//whatsnew.css';
 import './css//header.css';
 
-import WidgetDoc from '../components/widget-doc';
-import Release from '../components/release';
-import WhatsNew from '../components/whats-new';
-import Notification from '../components/notification';
+import WidgetDoc from '../components/Test-CMS/components/widget-doc';
+import Release from '../components/Test-CMS/components/release';
+import WhatsNew from '../components/Test-CMS/components/whats-new';
+import Notification from '../components/Test-CMS/components/notification';
 
 const withHighlight = WrappedComponent =>
   class Highlight extends React.Component {
