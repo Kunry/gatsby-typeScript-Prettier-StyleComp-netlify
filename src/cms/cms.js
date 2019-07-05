@@ -2,10 +2,18 @@
 import CMS from 'netlify-cms'
 import Prism from 'prismjs';
 import React from "react";
+import dayjs from 'dayjs';
+import { DocsTemplate } from './preview-templates/DocsTemplate';
 import BlogPostPreview from './preview-templates/BlogPostPreview'
 
 import './css/docs.css';
+import './css//whatsnew.css';
+import './css//header.css';
 
+import WidgetDoc from '../components/widget-doc';
+import Release from '../components/release';
+import WhatsNew from '../components/whats-new';
+import Notification from '../components/notification';
 
 const withHighlight = WrappedComponent =>
   class Highlight extends React.Component {
