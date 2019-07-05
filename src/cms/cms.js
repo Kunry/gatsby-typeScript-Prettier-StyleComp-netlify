@@ -1,6 +1,7 @@
+
 import CMS from 'netlify-cms'
 import Prism from 'prismjs';
-
+import React from "react";
 import BlogPostPreview from './preview-templates/BlogPostPreview'
 
 
