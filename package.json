@@ -5,6 +5,7 @@
   "author": "Ahn Heejong",
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
+    "dayjs": "^1.8.14",
     "disqus-react": "^1.0.5",
     "dotenv": "^8.0.0",
     "gatsby": "^2.0.67",
