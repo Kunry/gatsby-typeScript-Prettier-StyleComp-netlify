@@ -4,6 +4,8 @@ import Prism from 'prismjs';
 import React from "react";
 import BlogPostPreview from './preview-templates/BlogPostPreview'
 
+import './css/docs.css';
+
 
 const withHighlight = WrappedComponent =>
   class Highlight extends React.Component {
@@ -33,4 +35,10 @@ const withHighlight = WrappedComponent =>
     }
   };
 
+
+  const DocsPreview = ({ entry, widgetFor }) => (
+    <DocsTemplate title={entry.getIn(['data', 'title'])} body={widgetFor('body')} />
+  );
+
 CMS.registerPreviewTemplate('blog', withHighlight(BlogPostPreview));
+CMS.registerPreviewTemplate('docs', withHighlight(DocsPreview));
