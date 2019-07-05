@@ -21,23 +21,23 @@ const BlogPostTemplate = ({ title, author, date, body, html }: any) => {
 };
 export default BlogPostTemplate;
 
-// export const pageQuery = graphql`
-//   query blogPost($slug: String!) {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//     markdownRemark(fields: { slug: { eq: $slug } }) {
-//       frontmatter {
-//         title
-//         description
-//         # meta_description
-//         date(formatString: "MMMM D, YYYY")
-//         author
-//         twitter_image
-//       }
-//       html
-//     }
-//   }
-// `;
+export const pageQuery = graphql`
+  query blogPost($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        description
+        # meta_description
+        date(formatString: "MMMM D, YYYY")
+        author
+        twitter_image
+      }
+      html
+    }
+  }
+`;
