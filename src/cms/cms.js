@@ -39,6 +39,35 @@ const withHighlight = WrappedComponent =>
   const DocsPreview = ({ entry, widgetFor }) => (
     <DocsTemplate title={entry.getIn(['data', 'title'])} body={widgetFor('body')} />
   );
-
+  
+  const WidgetDocPreview = ({ entry, widgetFor }) => (
+    <WidgetDoc visible={true} label={entry.get('label')} body={widgetFor('body')} />
+  );
+  
+  const ReleasePreview = ({ entry }) => (
+    <WhatsNew>
+      {entry.getIn(['data', 'updates']).map((release, idx) => (
+        <Release
+          key={idx}
+          version={release.get('version')}
+          date={dayjs(release.get('date')).format('MMMM D, YYYY')}
+          description={release.get('description')}
+        />
+      ))}
+    </WhatsNew>
+  );
+  
+  const NotificationPreview = ({ entry }) =>
+    entry
+      .getIn(['data', 'notifications'])
+      .filter(notif => notif.get('published'))
+      .map((notif, idx) => (
+        <Notification key={idx} url={notif.get('url')} loud={notif.get('loud')}>
+          {notif.get('message')}
+        </Notification>
+      ));
 CMS.registerPreviewTemplate('blog', withHighlight(BlogPostPreview));
 CMS.registerPreviewTemplate('docs', withHighlight(DocsPreview));
+CMS.registerPreviewTemplate('widget_docs', withHighlight(WidgetDocPreview));
+CMS.registerPreviewTemplate('releases', ReleasePreview);
+CMS.registerPreviewTemplate('notifications', NotificationPreview);
