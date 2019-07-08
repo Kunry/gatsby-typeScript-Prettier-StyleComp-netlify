@@ -54,6 +54,13 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/content/website`,
+        name: "website"
+      }
+    },
+    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
@@ -72,13 +79,13 @@ module.exports = {
     //     refetchInterval: 60
     //   },
     // },
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     path: `${__dirname}/src/img`,
-    //     name: "images"
-    //   }
-    // },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/assets`,
+        name: "images"
+      }
+    },
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {

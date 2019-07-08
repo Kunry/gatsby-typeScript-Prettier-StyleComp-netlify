@@ -9,7 +9,7 @@ public_folder: /assets
 collections:
   - name: "docs" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Docs" # Used in the UI, ie.: "New Post"
-    folder: "website/content/docs" # The path to the folder where the documents are stored
+    folder: "content/website/content/docs" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
@@ -18,7 +18,7 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "widget_docs" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Widget Docs" # Used in the UI, ie.: "New Post"
-    folder: "website/content/docs/widgets" # The path to the folder where the documents are stored
+    folder: "content/website/content/docs/widgets" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
       - {label: "Name", name: "title"}
@@ -27,7 +27,7 @@ collections:
   - name: "blog"
     label: "Blog"
     label_singular: "Post"
-    folder: "website/content/blog"
+    folder: "content/website/content/blog"
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}

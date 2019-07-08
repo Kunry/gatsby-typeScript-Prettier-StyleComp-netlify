@@ -1,3 +1,5 @@
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
 import React from "react";
 import Layout from "../components/Layout";
 import PageHelmet from "../components/PageHelmet";
@@ -5,25 +7,37 @@ import PostItem, { Post, PostList } from "../components/Post";
 
 interface Props {
   data: {
-    allMarkdownRemark: {
-      edges: Array<{
-        node: Post;
-      }>;
+    markdownRemark: {
+      frontmatter: {
+        title: string;
+        twitter_image: string;
+      };
     };
   };
 }
 
-const IndexPage: React.SFC<Props> = props => {
+const IndexPage: React.SFC<any> = props => {
   return (
     <React.Fragment>
       <h1>Inicio</h1>
+      <Img fixed={props.data.file.childImageSharp.fixed} />
     </React.Fragment>
   );
 };
 
 export default IndexPage;
 
-import { graphql } from "gatsby";
+export const blogQuery = graphql`
+  query Blog {
+    file(relativePath: { regex: "/galactic/" }) {
+      childImageSharp {
+        fixed {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;
 
 // export const pageQuery = graphql`
 //   query PruebaQuery {
