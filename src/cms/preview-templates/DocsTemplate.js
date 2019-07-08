@@ -9,7 +9,7 @@ import Widgets from '../../components/Test-CMS/components/widgets';
 import DocsNav from '../../components/Test-CMS/components/docs-nav';
 import MobileNav from '../../components/Test-CMS/components/mobile-nav';
 
-import '../css/docs.css';
+// import '../css/docs.css';
 
 const toMenu = (menu, nav) =>
   menu.map(group => ({

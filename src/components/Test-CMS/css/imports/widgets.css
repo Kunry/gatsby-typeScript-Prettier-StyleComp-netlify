@@ -3,7 +3,7 @@
 }
 
 .widgets__cloud {
-  margin: $micro calc(-$micro / 2);
+  margin: $micro calc(-8px / 2);
 }
 
 .widgets__item {
@@ -14,8 +14,8 @@
   color: $darkGrey;
   border: 2px solid $darkGreen;
   border-radius: $borderRadius;
-  padding: calc($micro / 2) $micro;
-  margin: calc($micro / 2);
+  padding: calc(8px / 2) 8px;
+  margin: calc(8px / 2);
   cursor: pointer;
   transition: color 0.2s ease, background 0.2s ease;
   display: inline-block;

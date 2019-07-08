@@ -6,9 +6,9 @@ import dayjs from 'dayjs';
 import { DocsTemplate } from './preview-templates/DocsTemplate';
 import BlogPostPreview from './preview-templates/BlogPostPreview'
 
-import './css/docs.css';
-import './css//whatsnew.css';
-import './css//header.css';
+// import './css/docs.css';
+// import './css//whatsnew.css';
+// import './css//header.css';
 
 import WidgetDoc from '../components/Test-CMS/components/widget-doc';
 import Release from '../components/Test-CMS/components/release';

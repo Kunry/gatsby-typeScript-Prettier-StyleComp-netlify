@@ -9,8 +9,8 @@ import MobileNav from "../components/Test-CMS/components/mobile-nav";
 import Widgets from "../components/Test-CMS/components/widgets";
 
 // tslint:disable-next-line: no-submodule-imports
-import "prismjs/themes/prism-tomorrow.css";
-import "../components/Test-CMS/css/imports/docs.css";
+// import "prismjs/themes/prism-tomorrow.css";
+// import "../components/Test-CMS/css/imports/docs.css";
 
 const toMenu = (menu: any, nav: any) =>
   menu.map((group: any) => ({
