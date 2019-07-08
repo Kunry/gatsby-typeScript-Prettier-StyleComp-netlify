@@ -31,7 +31,7 @@ export const blogQuery = graphql`
   query Blog {
     file(relativePath: { regex: "/galactic/" }) {
       childImageSharp {
-        fixed {
+        fixed(width: 125, height: 125) {
           ...GatsbyImageSharpFixed
         }
       }
