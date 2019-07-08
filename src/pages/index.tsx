@@ -20,7 +20,7 @@ const IndexPage: React.SFC<any> = props => {
   return (
     <React.Fragment>
       <h1>Inicio</h1>
-      <Img fixed={props.data.file.childImageSharp.fixed} />
+      {/* <Img fixed={props.data.file.childImageSharp.fixed} /> */}
     </React.Fragment>
   );
 };
