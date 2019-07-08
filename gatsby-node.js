@@ -1,38 +1,62 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-// const remark = require(`remark`)
-// const html = require(`remark-html`)
-// const dateformat = require(`dateformat`)
-// const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
-// // const { makeBlogPath } = require(`./src/utils`)
-// const {PruebaParams} = require("./src/components/PruebaParams.tsx");
-// exports.createPages = async ({ actions, graphql }) => {
-//   const { data } = await graphql(`
-//     query {
-//       cms {
-//         blogPosts(where: { status: PUBLISHED }) {
-//           id
-//           createdAt
-//           slug
-//         }
-//       }
-//     }
-//   `)
-
-//   data.cms.blogPosts.forEach((blog, i) => {
-//     actions.createPage({
-//       path: `/${i}`,
-//       component: path.resolve(`./src/components/blog-post.js`),
-//       context: {
-//         blogId: blog.id,
-//       },
-//     })
-//   })
-// }
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
   
+
+
+  const docPage = path.resolve('./src/templates/doc-page.tsx');
+  const blogPost = path.resolve('./src/templates/blog-post.tsx');
+
+  const allMarkdown = await graphql(`
+   {
+     allFile(filter: {sourceInstanceName: {eq: "website"}}) {
+      edges {
+        node {
+          childMarkdownRemark {
+            frontmatter {
+              title
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  }
+  `);
+
+  if (allMarkdown.errors) {
+    console.error(allMarkdown.errors); // eslint-disable-line no-console
+    throw Error(allMarkdown.errors);
+  }
+
+  console.log(docPage)
+  console.log(allMarkdown.data.allFile.edges[0].node.childMarkdownRemark)
+  allMarkdown.data.allFile.edges.forEach(({ node }) => {
+    const { slug } = node.childMarkdownRemark.fields;
+    
+    let template = docPage;
+    
+    if (slug.includes('blog/')) {
+      template = blogPost;
+    }
+    
+    createPage({
+      path: slug,
+      component: template,
+      context: {
+        slug,
+      },
+    });
+  });
+
+
+
+
+
 
   const Home = path.resolve("src/components/Home/index.tsx");
   createPage({
@@ -169,17 +193,47 @@ exports.createPages = async ({ actions, graphql }) => {
   // });
 };
 
+const pad = n => (n >= 10 ? n : `0${n}`);
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });
+
+    const { relativePath } = getNode(node.parent);
+
+    let slug = value;
+
+    if (relativePath.includes('blog/')) {
+      const date = new Date(node.frontmatter.date);
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const filename = path.basename(relativePath, '.md');
+      slug = `/blog/${year}/${pad(month)}/${filename}`;
+
+      createNodeField({
+        node,
+        name: 'date',
+        value: date.toJSON(),
+      });
+    }
+
+    // used for doc posts
     createNodeField({
-      name: `slug`,
       node,
-      value
+      name: 'slug',
+      value: slug,
+    });
+
+    // used to create GitHub edit link
+    createNodeField({
+      node,
+      name: 'path',
+      value: relativePath,
     });
   }
+  
 };
 
 
