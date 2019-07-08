@@ -79,14 +79,14 @@ module.exports = {
     //     name: "images"
     //   }
     // },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-102906433-1",
-        respectDNT: true,
-        exclude: ["/public/**", "/admin/**"]
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: "UA-102906433-1",
+    //     respectDNT: true,
+    //     exclude: ["/public/**", "/admin/**"]
+    //   }
+    // },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -95,7 +95,7 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`
       }
     },
-    "gatsby-plugin-netlify", // make sure to keep it last in the array
+    // "gatsby-plugin-netlify", // make sure to keep it last in the array
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
