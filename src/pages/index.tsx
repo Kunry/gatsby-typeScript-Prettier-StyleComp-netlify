@@ -29,7 +29,7 @@ export default IndexPage;
 
 export const blogQuery = graphql`
   query Blog {
-    file(relativePath: { regex: "/galactic/" }) {
+    file(relativePath: { eq: "galacticcenter_3840x2160.0000.png" }) {
       childImageSharp {
         fixed(width: 125, height: 125) {
           ...GatsbyImageSharpFixed

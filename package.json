@@ -27,6 +27,7 @@
     "gatsby-source-graphql": "^2.1.0",
     "gatsby-transformer-remark": "^2.1.15",
     "gatsby-transformer-sharp": "^2.1.1",
+    "github-buttons": "git+https://github.com/ntkme/github-buttons.git",
     "netlify-cms": "^2.1.1",
     "node-sass": "^4.9.2",
     "normalize.css": "^8.0.0",
