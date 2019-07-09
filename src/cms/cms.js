@@ -87,7 +87,11 @@ class TestControl extends React.Component {
   getValue() {
     return this.props.value ? this.props.value : "";
   };
+  isValid = (p) =>  {
+    console.log(p, this.props.value);
+    return false;
 
+  }
   render(){
   const String = CMS.getWidget("string").control;
 
