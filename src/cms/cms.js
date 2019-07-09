@@ -89,10 +89,13 @@ class TestControl extends React.Component {
   };
 
   render(){
+  const String = CMS.getWidget("string").control;
+
     console.log(this.props)
     return (
       <div>
         <SlideControlHeader>TEXT</SlideControlHeader>
+        <String {...this.props}/>
       </div>
     )
   }
