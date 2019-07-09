@@ -2,6 +2,7 @@
 import CMS from 'netlify-cms'
 import Prism from 'prismjs';
 import React from "react";
+import styled from "styled-components";
 import dayjs from 'dayjs';
 import { DocsTemplate } from './preview-templates/DocsTemplate';
 import BlogPostPreview from './preview-templates/BlogPostPreview'
@@ -79,3 +80,38 @@ CMS.registerPreviewTemplate('docs', withHighlight(DocsPreview));
 CMS.registerPreviewTemplate('widget_docs', withHighlight(WidgetDocPreview));
 CMS.registerPreviewTemplate('releases', ReleasePreview);
 CMS.registerPreviewTemplate('notifications', NotificationPreview);
+
+
+class TestControl extends React.Component {
+
+  getValue() {
+    return this.props.value ? this.props.value : "";
+  };
+
+  render(){
+    console.log(this.props)
+    return (
+      <div>
+        <SlideControlHeader>TEXT</SlideControlHeader>
+      </div>
+    )
+  }
+};
+
+const SlideControlHeader = styled.div`
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+  margin-top: 20px;
+`;
+
+const TestPreview = props => {
+  // const string = CMS.getWidget("string").control;
+    console.log(props)
+  return(
+    <div>
+      
+    </div>
+  )
+}
+
+CMS.registerWidget("test", TestControl)

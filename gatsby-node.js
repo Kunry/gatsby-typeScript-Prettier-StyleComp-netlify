@@ -3,29 +3,27 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
-  
 
-
-  const docPage = path.resolve('./src/templates/doc-page.tsx');
-  const blogPost = path.resolve('./src/templates/blog-post.tsx');
+  const docPage = path.resolve("./src/templates/doc-page.tsx");
+  const blogPost = path.resolve("./src/templates/blog-post.tsx");
 
   const allMarkdown = await graphql(`
-   {
-     allFile(filter: {sourceInstanceName: {eq: "website"}}) {
-      edges {
-        node {
-          childMarkdownRemark {
-            frontmatter {
-              title
-            }
-            fields {
-              slug
+    {
+      allFile(filter: { sourceInstanceName: { eq: "website" } }) {
+        edges {
+          node {
+            childMarkdownRemark {
+              frontmatter {
+                title
+              }
+              fields {
+                slug
+              }
             }
           }
         }
       }
     }
-  }
   `);
 
   if (allMarkdown.errors) {
@@ -33,39 +31,34 @@ exports.createPages = async ({ actions, graphql }) => {
     throw Error(allMarkdown.errors);
   }
 
-  console.log(docPage)
-  console.log(allMarkdown.data.allFile.edges[0].node.childMarkdownRemark)
+  console.log(docPage);
+  console.log(allMarkdown.data.allFile.edges[0].node.childMarkdownRemark);
   allMarkdown.data.allFile.edges.forEach(({ node }) => {
     const { slug } = node.childMarkdownRemark.fields;
-    
+
     let template = docPage;
-    
-    if (slug.includes('blog/')) {
+
+    if (slug.includes("blog/")) {
       template = blogPost;
     }
-    
+
     createPage({
       path: slug,
       component: template,
       context: {
-        slug,
-      },
+        slug
+      }
     });
   });
-
-
-
-
-
 
   const Home = path.resolve("src/components/Home/index.tsx");
   createPage({
     path: "es",
     component: Home,
-    context:{
+    context: {
       language: "es"
     }
-  })
+  });
 
   const PruebaParams = path.resolve("src/components/PruebaParams.tsx");
   // const router = [
@@ -99,21 +92,19 @@ exports.createPages = async ({ actions, graphql }) => {
         }
       }
     }
-  `)
-  console.log(router.data.footer.childMarkdownRemark.frontmatter.locations)
+  `);
+  console.log(router.data.footer.childMarkdownRemark.frontmatter.locations);
   //.footer.childMarkdownRemark.frontmatter.campus;
 
-  router.data.footer.childMarkdownRemark.frontmatter.locations.forEach((name) => {
+  router.data.footer.childMarkdownRemark.frontmatter.locations.forEach(name => {
     createPage({
       path: `/es/ciudad/${name}`,
       component: PruebaParams,
-      context:{
+      context: {
         language: "es"
       }
     });
   });
-
-
 
   const { data } = await graphql(`
     query {
@@ -136,46 +127,54 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `);
   const Courses = path.resolve("src/templates/courses.tsx");
-  
 
-  const result = data.allMarkdownRemark.edges
-                .reduce((acc, {node}) => {
-                        const language = node.frontmatter.language;
-                        node.frontmatter.courseId = node.id
-                        return (language in acc ? 
-                          acc[language].push(node.frontmatter) :
-                          acc[language] = [node.frontmatter]
-                        ) && acc}
-                , {})
+  const result = data.allMarkdownRemark.edges.reduce((acc, { node }) => {
+    const language = node.frontmatter.language;
+    node.frontmatter.courseId = node.id;
+    return (
+      (language in acc
+        ? acc[language].push(node.frontmatter)
+        : (acc[language] = [node.frontmatter])) && acc
+    );
+  }, {});
 
-
-  const exist = ({has, id, result, course }) => {
-    if(result) {
+  const exist = ({ has, id, result, course }) => {
+    if (result) {
       course[has] = true;
-      course[id] = result.courseId
+      course[id] = result.courseId;
     } else {
-      course[has] = false
+      course[has] = false;
     }
-  }
-  
-  Object.values(result).forEach( language => {
-    language.forEach( (course, index ) => {
-      exist({has:"hasPrevious", id:"previousId", "result":language[index - 1], course})
-      exist({has:"hasNext", id:"nextId", "result":language[index + 1], course})
+  };
+
+  Object.values(result).forEach(language => {
+    language.forEach((course, index) => {
+      exist({
+        has: "hasPrevious",
+        id: "previousId",
+        result: language[index - 1],
+        course
+      });
+      exist({
+        has: "hasNext",
+        id: "nextId",
+        result: language[index + 1],
+        course
+      });
       createPage({
-            path: `${course.language}/course/${course.course_code}`,
-            component: Courses,
-            context: {
-              courseId: course.courseId,
-              previousId: course.previousId, 
-              hasPrevious: course.hasPrevious, 
-              nextId: course.nextId, 
-              hasNext: course.hasNext,
-              language: course.language
-            }
-          });
-    })
-  })
+        path: `${course.language}/course/${course.course_code}`,
+        component: Courses,
+        context: {
+          courseId: course.courseId,
+          previousId: course.previousId,
+          hasPrevious: course.hasPrevious,
+          nextId: course.nextId,
+          hasNext: course.hasNext,
+          language: course.language
+        }
+      });
+    });
+  });
 
   // result.forEach(({ course_code, courseId , previousId, hasPrevious, nextId, hasNext, language}) => {
   //   createPage({
@@ -183,9 +182,9 @@ exports.createPages = async ({ actions, graphql }) => {
   //     component: Courses,
   //     context: {
   //       courseId,
-  //       previousId, 
-  //       hasPrevious, 
-  //       nextId, 
+  //       previousId,
+  //       hasPrevious,
+  //       nextId,
   //       hasNext,
   //       language
   //     }
@@ -205,53 +204,51 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
     let slug = value;
 
-    if (relativePath.includes('blog/')) {
+    if (relativePath.includes("blog/")) {
       const date = new Date(node.frontmatter.date);
       const year = date.getFullYear();
       const month = date.getMonth() + 1;
-      const filename = path.basename(relativePath, '.md');
+      const filename = path.basename(relativePath, ".md");
       slug = `/blog/${year}/${pad(month)}/${filename}`;
 
       createNodeField({
         node,
-        name: 'date',
-        value: date.toJSON(),
+        name: "date",
+        value: date.toJSON()
       });
     }
 
     // used for doc posts
     createNodeField({
       node,
-      name: 'slug',
-      value: slug,
+      name: "slug",
+      value: slug
     });
 
     // used to create GitHub edit link
     createNodeField({
       node,
-      name: 'path',
-      value: relativePath,
+      name: "path",
+      value: relativePath
     });
   }
-  
 };
-
 
 // exports.sourceNodes = ({ actions }) => {
 //   const { createTypes } = actions
-  // const typeDefs = `
-  //   type MarkdownRemark implements Node {
-  //     frontmatter: Frontmatter
-  //   }
-  //   type Frontmatter {
-  //     tags: [String!]!
-  //   }
-  // `
-  // createTypes(typeDefs)
+// const typeDefs = `
+//   type MarkdownRemark implements Node {
+//     frontmatter: Frontmatter
+//   }
+//   type Frontmatter {
+//     tags: [String!]!
+//   }
+// `
+// createTypes(typeDefs)
 // };
 
 exports.sourceNodes = ({ actions, schema }) => {
-  const { createTypes } = actions
+  const { createTypes } = actions;
   const typeHeader = `
     type HeaderMd implements Node @dontInfer{
       text: String
@@ -266,8 +263,8 @@ exports.sourceNodes = ({ actions, schema }) => {
   type Frontmatter {
     tags: [String!]!
   }
-`
-createTypes(types)
+`;
+  createTypes(types);
 
   const typeDefs = [
     "type MarkdownRemark implements Node { frontmatter: Frontmatter }",
@@ -282,22 +279,22 @@ createTypes(types)
             console.log("----------------------------------------");
             return context.nodeModel.getNodeById({
               id: source.header,
-              type: "HeaderMd",
-            })
+              type: "HeaderMd"
+            });
             // But since we are using the author email as foreign key,
             // we can use `runQuery`, or simply get all author nodes
             // with `getAllNodes` and manually find the linked author
             // node:
             return context.nodeModel
               .getAllNodes({ type: "HeaderMd" })
-              .find(author => author.text === source.header)
-          },
-        },
-      },
-    }),
-  ]
-  createTypes(typeDefs)
-}
+              .find(author => author.text === source.header);
+          }
+        }
+      }
+    })
+  ];
+  createTypes(typeDefs);
+};
 
 exports.createResolvers = ({ createResolvers }) => {
   const resolvers = {
@@ -306,14 +303,14 @@ exports.createResolvers = ({ createResolvers }) => {
         resolve(source, args, context, info) {
           return context.nodeModel.getNodeById({
             id: source.header,
-            type: "HeaderMd",
-          })
-        },
-      },
-    },
-  }
-  createResolvers(resolvers)
-}
+            type: "HeaderMd"
+          });
+        }
+      }
+    }
+  };
+  createResolvers(resolvers);
+};
 // exports.createResolvers = ({
 //   actions,
 //   cache,
@@ -357,3 +354,5 @@ exports.createResolvers = ({ createResolvers }) => {
 //     },
 //   })
 // }
+
+
