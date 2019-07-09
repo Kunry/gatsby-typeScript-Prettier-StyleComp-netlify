@@ -89,7 +89,8 @@ class TestControl extends React.Component {
   };
   isValid = (p) =>  {
     console.log(p, this.props.value);
-    return false;
+    
+    return this.props.value.length > 10;
 
   }
   render(){
