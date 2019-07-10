@@ -89,13 +89,11 @@ class TestControl extends React.Component {
     return ( value.length > 10 && value.length < 20 ) || { error: { message: 'Length between 50 and 60 characters.' } };
   }
   render(){
-  const String = CMS.getWidget("string").control;
+  const String = CMS.getWidget("object").control;
 
     return (
       <div>
         <SlideControlHeader>TEXT</SlideControlHeader>
-        <String {...this.props}/>
-        <String {...this.props}/>
         <String {...this.props}/>
       </div>
     )
@@ -118,4 +116,4 @@ const TestPreview = props => {
   )
 }
 
-CMS.registerWidget("test", TestControl)
+CMS.registerWidget("test", TestControl, TestPreview)
