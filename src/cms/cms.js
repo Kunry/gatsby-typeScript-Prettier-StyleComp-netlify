@@ -94,6 +94,8 @@ class TestControl extends React.Component {
 
   isValid = () => {
     console.log(this.props)
+    console.log(this.props.field.get("fields"))
+    console.log(this.props)
     return true
   }
 
