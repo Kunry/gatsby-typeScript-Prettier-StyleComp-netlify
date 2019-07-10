@@ -139,13 +139,13 @@ class StringControl extends React.Component {
 
 
   isValid = () =>  {
-    const { value } = this.props;
-    const max = this.props.get("max")
-    const min = this.props.get("min")
+  //   const { value } = this.props;
+  //   const max = this.props.get("max")
+  //   const min = this.props.get("min")
     console.log("--------------------");
-    console.log(value, max, min);
+    console.log(this.props);
     console.log("--------------------");
-    return ( value.length > min && value.length < max ) || { error: { message: `Length between ${min} and ${max} characters.` } };
+  //   return ( value.length > min && value.length < max ) || { error: { message: `Length between ${min} and ${max} characters.` } };
   }
   render(){
     console.log(this.props);
