@@ -142,8 +142,8 @@ class StringControl extends React.Component {
 
   isValid = () =>  {
     // const { value } = this.props;
-    const max = this.props.get("max");
-    const min = this.props.get("min");
+    const max = this.props.field.get("max");
+    const min = this.props.field.get("min");
     console.log("--------------------");
     console.log(this.props, max, min);
     console.log("--------------------");
@@ -151,7 +151,7 @@ class StringControl extends React.Component {
     // return ( value.length > min && value.length < max ) || { error: { message: `Length between ${min} and ${max} characters.` } };
   }
   render(){
-    const max = this.props.get("max");
+    const max = this.props.field.get("max");
     console.log(max);
     const String = CMS.getWidget('string').control;
     return (
