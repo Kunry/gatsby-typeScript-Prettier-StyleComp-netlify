@@ -99,9 +99,7 @@ class TestControl extends React.Component {
 
 
   render(){
-    const max = this.props.get("max");
     console.log(this.props);
-    console.log(max);
 
     const ListControl = CMS.getWidget('list').control;
     return (
