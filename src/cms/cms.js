@@ -84,19 +84,13 @@ CMS.registerPreviewTemplate('notifications', NotificationPreview);
 
 class TestControl extends React.Component {
 
-  getValue() {
-    return this.props.value ? this.props.value : "";
-  };
-  isValid = (p) =>  {
-    console.log(p, this.props.value);
-    
-    return this.props.value.length > 10 || { error: { message: 'Your error message.' } };
-
+  isValid = () =>  {
+    const { value } = this.props
+    return ( value.length > 10 && value.length < 20 ) || { error: { message: 'Length between 50 and 60 characters.' } };
   }
   render(){
   const String = CMS.getWidget("string").control;
 
-    console.log(this.props)
     return (
       <div>
         <SlideControlHeader>TEXT</SlideControlHeader>
