@@ -81,25 +81,29 @@ CMS.registerPreviewTemplate('widget_docs', withHighlight(WidgetDocPreview));
 CMS.registerPreviewTemplate('releases', ReleasePreview);
 CMS.registerPreviewTemplate('notifications', NotificationPreview);
 
+import { ClassNames } from '@emotion/core';
 
 class TestControl extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      collapsed: false,
+    };
+  }
+
+
   isValid = () =>  {
     const { value } = this.props
-    return ( value.length > 10 && value.length < 20 ) || { error: { message: 'Length between 50 and 60 characters.' } };
+    return ( value.length > 50 && value.length < 60 ) || { error: { message: 'Length between 50 and 60 characters.' } };
   }
   render(){
-  const Object = CMS.getWidget("object").control;
-  const String = CMS.getWidget("string").control;
-  const String2 = CMS.getWidget("string").control;
-
+    console.log(this.props);
+    const ListControl = cms.getWidget('list').control;
     return (
       <div>
         <SlideControlHeader>TEXT</SlideControlHeader>
-        <Object {...this.props}>
-          <String {...this.props}/>
-          <String2 {...this.props}/>
-        </Object>
+        <ListControl {...this.props}/>
       </div>
     )
   }
