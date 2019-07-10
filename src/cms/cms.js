@@ -99,7 +99,7 @@ class TestControl extends React.Component {
   }
   render(){
     console.log(this.props);
-    const ListControl = cms.getWidget('list').control;
+    const ListControl = CMS.getWidget('list').control;
     return (
       <div>
         <SlideControlHeader>TEXT</SlideControlHeader>
