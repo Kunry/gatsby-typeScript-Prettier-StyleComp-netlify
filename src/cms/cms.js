@@ -93,10 +93,6 @@ class TestControl extends React.Component {
   }
 
 
-  isValid = () =>  {
-    const { value } = this.props
-    return ( value.length > 50 && value.length < 60 ) || { error: { message: 'Length between 50 and 60 characters.' } };
-  }
   render(){
     console.log(this.props);
     const ListControl = CMS.getWidget('list').control;
