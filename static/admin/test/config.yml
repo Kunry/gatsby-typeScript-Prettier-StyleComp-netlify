@@ -19,6 +19,9 @@ collections:
       - {label: "Group", name: "group", widget: "string"}
       - {label: "Weight", name: "weight", widget: "number"}
       - {label: "Body", name: "body", widget: "markdown"}
+
+
+
   - name: "widget_docs" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Widget Docs" # Used in the UI, ie.: "New Post"
     folder: "content/website/content/docs/widgets" # The path to the folder where the documents are stored
@@ -34,10 +37,13 @@ collections:
           - { label: "Test2", name: "test2", widget: "customString", max: 10, min: 5 }
       - label: "Test Obj"
         name: "test_obj"
-        widget: "object"
+        widget: "list"
         fields: 
           - { label: "Level 1", name: "test_level1_1", widget: "string"}
           - { label: "Level 2", name: "test_level1_2", widget: "string"}
+
+
+
   - name: "blog"
     label: "Blog"
     label_singular: "Post"
@@ -96,7 +102,7 @@ collections:
     editor:
      preview: true
     fields:
-      - { lavel: "Language", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
+      - { label: "Language", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
       - { label: "Course", name: "course", widget: "string" }
       - { label: "Course Code", name: "course_code", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -119,7 +125,7 @@ collections:
     editor:
      preview: false
     fields:
-      - { lavel: "Lenguaje", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
+      - { label: "Lenguaje", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
       - { label: "Course", name: "course", widget: "string" }
       - { label: "Course Code", name: "course_code", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -143,7 +149,7 @@ collections:
     editor:
      preview: false
     fields:
-      - { lavel: "Lenguaje", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
+      - { label: "Lenguaje", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
       - { label: "Course", name: "course", widget: "string" }
       - { label: "Course Code", name: "course_code", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -167,7 +173,7 @@ collections:
     editor:
      preview: false
     fields:
-      - { lavel: "Lenguaje", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
+      - { label: "Lenguaje", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
       - { label: "Course", name: "course", widget: "string" }
       - { label: "Course Code", name: "course_code", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -191,7 +197,7 @@ collections:
     editor:
      preview: false
     fields:
-      - { lavel: "Lenguaje", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
+      - { label: "Lenguaje", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
       - { label: "Course", name: "course", widget: "string" }
       - { label: "Course Code", name: "course_code", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -215,7 +221,7 @@ collections:
     editor:
      preview: false
     fields:
-      - { lavel: "Language", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
+      - { label: "Language", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
       - { label: "Course", name: "course", widget: "string" }
       - { label: "Course Code", name: "course_code", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -238,7 +244,7 @@ collections:
     editor:
       preview: false
     fields:
-      - { lavel: "Language", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
+      - { label: "Language", name: "language", widget: "select", options: ["es", "en", "fr", "de", "be", "pt", "nl"] }
       - { label: "Course", name: "course", widget: "string" }
       - { label: "Course Code", name: "course_code", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
