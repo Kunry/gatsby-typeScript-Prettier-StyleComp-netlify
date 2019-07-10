@@ -48,11 +48,11 @@ const withHighlight = WrappedComponent =>
   const DocsPreview = ({ entry, widgetFor }) => (
     <DocsTemplate title={entry.getIn(['data', 'title'])} body={widgetFor('body')} />
   );
-  
+
   const WidgetDocPreview = ({ entry, widgetFor }) => (
     <WidgetDoc visible={true} label={entry.get('label')} body={widgetFor('body')} />
   );
-  
+
   const ReleasePreview = ({ entry }) => (
     <WhatsNew>
       {entry.getIn(['data', 'updates']).map((release, idx) => (
@@ -65,7 +65,7 @@ const withHighlight = WrappedComponent =>
       ))}
     </WhatsNew>
   );
-  
+
   const NotificationPreview = ({ entry }) =>
     entry
       .getIn(['data', 'notifications'])
@@ -94,12 +94,15 @@ class TestControl extends React.Component {
 
   isValid = () => {
     console.log(this.props)
-    return false
+    return true
   }
 
 
   render(){
+    const max = this.props.get("max");
     console.log(this.props);
+    console.log(max);
+
     const ListControl = CMS.getWidget('list').control;
     return (
       <div>
@@ -118,10 +121,10 @@ const SlideControlHeader = styled.div`
 
 const TestPreview = props => {
   // const string = CMS.getWidget("string").control;
-    console.log(props)
+    // console.log(props)
   return(
     <div>
-      
+
     </div>
   )
 }
@@ -150,7 +153,8 @@ class StringControl extends React.Component {
     // return ( value.length > min && value.length < max ) || { error: { message: `Length between ${min} and ${max} characters.` } };
   }
   render(){
-    console.log(this.props);
+    const max = this.props.get("max");
+    console.log(max);
     const String = CMS.getWidget('string').control;
     return (
       <div>
