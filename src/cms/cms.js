@@ -125,4 +125,33 @@ const TestPreview = props => {
   )
 }
 
-CMS.registerWidget("test", TestControl, TestPreview)
+CMS.registerWidget("test", TestControl, TestPreview);
+
+
+class StringControl extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      collapsed: false,
+    };
+  }
+
+
+  isValid = () =>  {
+    const { value, max, min } = this.props;
+    return ( value.length > min && value.length < max ) || { error: { message: `Length between ${min} and ${max} characters.` } };
+  }
+  render(){
+    console.log(this.props);
+    const String = CMS.getWidget('string').control;
+    return (
+      <div>
+        <String {...this.props}/>
+      </div>
+    )
+  }
+};
+
+
+CMS.registerWidget("customString", StringControl, TestPreview)

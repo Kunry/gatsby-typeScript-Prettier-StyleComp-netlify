@@ -26,7 +26,12 @@ collections:
     fields: # The fields each document in this collection have
       - {label: "Name", name: "title"}
       - {label: "Label", name: "label"}
-      - {label: "Test", name: "venga", widget: "test"}
+      - label: "Test"
+        name: "venga"
+        widget: "test"
+        fields: 
+          - { label: "Test1", name: "test1", widget: "customString", max: 60, min: 50 }
+          - { label: "Test2", name: "test2", widget: "customString", max: 10, min: 5 }
       - label: "Test Obj"
         name: "test_obj"
         widget: "object"
