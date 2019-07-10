@@ -95,6 +95,8 @@ class TestControl extends React.Component {
       <div>
         <SlideControlHeader>TEXT</SlideControlHeader>
         <String {...this.props}/>
+        <String {...this.props}/>
+        <String {...this.props}/>
       </div>
     )
   }
