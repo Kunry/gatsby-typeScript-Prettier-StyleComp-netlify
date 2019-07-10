@@ -27,7 +27,12 @@ collections:
       - {label: "Name", name: "title"}
       - {label: "Label", name: "label"}
       - {label: "Test", name: "venga", widget: "test"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Test Obj"
+        name: "test_obj"
+        widget: "object"
+        fields: 
+          - { label: "Level 1", name: "test_level1_1", widget: "string"}
+          - { label: "Level 2", name: "test_level1_2", widget: "string"}
   - name: "blog"
     label: "Blog"
     label_singular: "Post"
