@@ -1,30 +1,30 @@
 require("dotenv").config();
-console.log(process.env.URL_API)
+console.log(process.env.URL_API);
 module.exports = {
   siteMetadata: {
-    title: 'Netlify CMS | Open-Source Content Management System',
-    description: 'Open source content management for your Git workflow',
+    title: "Netlify CMS | Open-Source Content Management System",
+    description: "Open source content management for your Git workflow",
     menu: {
       docs: [
         {
-          name: 'start',
-          title: 'Quick Start',
+          name: "start",
+          title: "Quick Start",
         },
         {
-          name: 'reference',
-          title: 'Reference',
+          name: "reference",
+          title: "Reference",
         },
         {
-          name: 'media',
-          title: 'Media',
+          name: "media",
+          title: "Media",
         },
         {
-          name: 'guides',
-          title: 'Guides',
+          name: "guides",
+          title: "Guides",
         },
         {
-          name: 'contributing',
-          title: 'Contributing',
+          name: "contributing",
+          title: "Contributing",
         },
       ],
     },
@@ -37,38 +37,38 @@ module.exports = {
     "gatsby-image",
     {
       resolve: "gatsby-plugin-styled-components",
-      options: {}
+      options: {},
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/pages`,
-        name: "pages"
-      }
+        name: "pages",
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/content/Home`,
-        name: "home"
-      }
+        name: "home",
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/content/website`,
-        name: "website"
-      }
+        name: "website",
+      },
     },
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-prismjs"
-          }
-        ]
-      }
+            resolve: "gatsby-remark-prismjs",
+          },
+        ],
+      },
     },
     // {
     //   resolve: "gatsby-source-graphql",
@@ -83,8 +83,8 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/static/assets`,
-        name: "images"
-      }
+        name: "images",
+      },
     },
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
@@ -99,22 +99,22 @@ module.exports = {
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-        publicPath: `admin/test`
-      }
+        modulePath: `${__dirname}/src/cms/cms.tsx`,
+        publicPath: `admin/test`,
+      },
     },
     // "gatsby-plugin-netlify", // make sure to keep it last in the array
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'NetlifyCMS',
-        short_name: 'NetlifyCMS',
-        start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
-        display: 'standalone',
-        icon: 'static/img/favicon/icon-512x512.png',
+        name: "NetlifyCMS",
+        short_name: "NetlifyCMS",
+        start_url: "/",
+        background_color: "#ffffff",
+        theme_color: "#ffffff",
+        display: "standalone",
+        icon: "static/img/favicon/icon-512x512.png",
       },
     },
-  ]
+  ],
 };

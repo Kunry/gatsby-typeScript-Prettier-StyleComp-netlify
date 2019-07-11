@@ -33,7 +33,7 @@ const Courses: React.SFC<{
       <div
         className="Prueba"
         dangerouslySetInnerHTML={{
-          __html: data.markdownRemark.html || `<h1>NO BODY</h1>`
+          __html: data.markdownRemark.html || `<h1>NO BODY</h1>`,
         }}
       />
       <Section>

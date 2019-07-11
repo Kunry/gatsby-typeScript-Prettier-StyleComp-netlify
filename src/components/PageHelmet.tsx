@@ -10,7 +10,7 @@ interface Props {
 const PageHelmet: React.SFC<Props> = ({
   title,
   url,
-  description = "ahnheejong.name"
+  description = "ahnheejong.name",
 }) => (
   <Helmet title={title}>
     <meta name="viewport" content="width=device-width,initial-scale=1" />

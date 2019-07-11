@@ -46,8 +46,8 @@ exports.createPages = async ({ actions, graphql }) => {
       path: slug,
       component: template,
       context: {
-        slug
-      }
+        slug,
+      },
     });
   });
 
@@ -56,8 +56,8 @@ exports.createPages = async ({ actions, graphql }) => {
     path: "es",
     component: Home,
     context: {
-      language: "es"
-    }
+      language: "es",
+    },
   });
 
   const PruebaParams = path.resolve("src/components/PruebaParams.tsx");
@@ -101,8 +101,8 @@ exports.createPages = async ({ actions, graphql }) => {
       path: `/es/ciudad/${name}`,
       component: PruebaParams,
       context: {
-        language: "es"
-      }
+        language: "es",
+      },
     });
   });
 
@@ -153,13 +153,13 @@ exports.createPages = async ({ actions, graphql }) => {
         has: "hasPrevious",
         id: "previousId",
         result: language[index - 1],
-        course
+        course,
       });
       exist({
         has: "hasNext",
         id: "nextId",
         result: language[index + 1],
-        course
+        course,
       });
       createPage({
         path: `${course.language}/course/${course.course_code}`,
@@ -170,8 +170,8 @@ exports.createPages = async ({ actions, graphql }) => {
           hasPrevious: course.hasPrevious,
           nextId: course.nextId,
           hasNext: course.hasNext,
-          language: course.language
-        }
+          language: course.language,
+        },
       });
     });
   });
@@ -214,7 +214,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({
         node,
         name: "date",
-        value: date.toJSON()
+        value: date.toJSON(),
       });
     }
 
@@ -222,14 +222,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       node,
       name: "slug",
-      value: slug
+      value: slug,
     });
 
     // used to create GitHub edit link
     createNodeField({
       node,
       name: "path",
-      value: relativePath
+      value: relativePath,
     });
   }
 };
@@ -279,7 +279,7 @@ exports.sourceNodes = ({ actions, schema }) => {
             console.log("----------------------------------------");
             return context.nodeModel.getNodeById({
               id: source.header,
-              type: "HeaderMd"
+              type: "HeaderMd",
             });
             // But since we are using the author email as foreign key,
             // we can use `runQuery`, or simply get all author nodes
@@ -288,10 +288,10 @@ exports.sourceNodes = ({ actions, schema }) => {
             return context.nodeModel
               .getAllNodes({ type: "HeaderMd" })
               .find(author => author.text === source.header);
-          }
-        }
-      }
-    })
+          },
+        },
+      },
+    }),
   ];
   createTypes(typeDefs);
 };
@@ -303,11 +303,11 @@ exports.createResolvers = ({ createResolvers }) => {
         resolve(source, args, context, info) {
           return context.nodeModel.getNodeById({
             id: source.header,
-            type: "HeaderMd"
+            type: "HeaderMd",
           });
-        }
-      }
-    }
+        },
+      },
+    },
   };
   createResolvers(resolvers);
 };
@@ -354,5 +354,3 @@ exports.createResolvers = ({ createResolvers }) => {
 //     },
 //   })
 // }
-
-
