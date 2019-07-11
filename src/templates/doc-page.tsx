@@ -15,7 +15,7 @@ import Widgets from "../components/Test-CMS/components/widgets";
 const toMenu = (menu: any, nav: any) =>
   menu.map((group: any) => ({
     group: nav.group.find((g: any) => g.fieldValue === group.name),
-    title: group.title,
+    title: group.title
   }));
 
 const DocsSidebar = ({ docsNav, location, history }: any) => (
@@ -35,7 +35,7 @@ export const DocsTemplate: React.SFC<any> = ({
   showSidebar,
   docsNav,
   location,
-  history,
+  history
 }) => (
   <div className="docs detail page">
     <div className="container">

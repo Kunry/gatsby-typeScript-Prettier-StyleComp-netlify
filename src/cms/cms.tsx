@@ -150,7 +150,7 @@ class StringControl extends React.Component<ControlStringProps, any> {
     // console.log(this.props, max, min);
     // return false
     return (
-      (value.length > min && value.length < max) || {
+      (value.length >= min && value.length <= max) || {
         error: { message: `Length between ${min} and ${max} characters.` },
       }
     );
@@ -165,3 +165,24 @@ class StringControl extends React.Component<ControlStringProps, any> {
 }
 
 CMS.registerWidget("customString", StringControl, TestPreview);
+
+interface ControlObjProps {
+  value: object;
+  field: Map<string, any>;
+}
+
+// tslint:disable-next-line: max-classes-per-file
+class ObjControl extends React.Component<ControlObjProps, any> {
+  public isValid = () => {
+    const { value } = this.props;
+    return false;
+  };
+  public render() {
+    // tslint:disable-next-line: no-console
+    console.log(this.props);
+    const ObjWidget = CMS.getWidget("object").control;
+    return <ObjWidget {...this.props} />;
+  }
+}
+
+CMS.registerWidget("CustomObject", ObjControl, TestPreview);

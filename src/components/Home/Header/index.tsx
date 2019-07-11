@@ -38,7 +38,7 @@ const Header: React.SFC<Props> = props => {
     locations,
     careerServices,
     alumni,
-    languages,
+    languages
   } = result.header.childMarkdownRemark.frontmatter;
   // console.log(result.header.childMarkdownRemark.frontmatter);
 
@@ -74,7 +74,7 @@ const Header: React.SFC<Props> = props => {
               <UL_LIST className="Locations">
                 {languages.map(
                   ({
-                    language,
+                    language
                   }: {
                     language: { language: string; icon: string };
                   }) => (
