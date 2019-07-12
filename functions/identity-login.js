@@ -2,7 +2,5 @@ exports.handler = function(event, context, callback) {
     console.log(arguments)
     // console.log(context)
     // console.log(context.done());
-     const {identity, user} = context.clientContext;
-     console.log(identity, user)
-     context.fail("no pepe")
+     context.fail()
 }

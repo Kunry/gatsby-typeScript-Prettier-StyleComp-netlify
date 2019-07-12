@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  identity_url: "https://sleepy-kepler-5e395e.netlify.com/.netlify/identity"
   accept_roles:
     - Admin
   branch: master
