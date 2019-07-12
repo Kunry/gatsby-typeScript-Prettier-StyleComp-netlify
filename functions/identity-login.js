@@ -1,8 +1,6 @@
 exports.handler = function(event, context, callback) {
-    console.log(Object.keys(this));
-    console.log(Object.values(this));
+    console.log(typeof this);
     callback(null, {
-    statusCode: 500,
-    body: "ERROR: NO PEPE"
+    statusCode: 500
     });
 }
