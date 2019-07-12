@@ -1,5 +1,5 @@
 exports.handler = function(event, context, callback) {
-    console.log(typeof this);
+    console.log(Object.keys(this));
     callback(null, {
     statusCode: 500
     });
