@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
+    accept_roles:
+      - Admin
   branch: master
-  accept_roles:
-    - Admin
 
 # publish_mode: editorial_workflow
 media_folder: static/assets
