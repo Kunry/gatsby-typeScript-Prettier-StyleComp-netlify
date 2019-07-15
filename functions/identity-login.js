@@ -7,7 +7,7 @@ const pepe = () => {
 exports.handler = function(event, context, callback) {
   pepe();
   console.log("--------------");
-  console.log(Object.values(this.process));
+//   console.log(Object.values(this.process));
   callback(null, {
     statusCode: 200,
   });
