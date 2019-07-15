@@ -1,6 +1,6 @@
 exports.handler = function(event, context, callback) {
-    console.log(typeof this.process);
-    console.log(JSON.stringify(this.process));
+    console.log("--------------");
+    console.log(Object.values(this.process));
     callback(null, {
     statusCode: 200
     });
