@@ -3,7 +3,7 @@ backend:
   accept_roles:
     - admin
   branch: master
-
+  site_domain: https://sleepy-kepler-5e395e.netlify.com/admin/test/#/
 # publish_mode: editorial_workflow
 media_folder: static/assets
 public_folder: /assets
