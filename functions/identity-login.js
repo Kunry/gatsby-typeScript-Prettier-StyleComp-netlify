@@ -1,6 +1,7 @@
 
 const pepe = () => {
     console.log("Llamo a pepe");
+    console.log(window)
 }
 
 
