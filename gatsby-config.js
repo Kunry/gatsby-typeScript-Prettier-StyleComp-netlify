@@ -96,18 +96,19 @@ module.exports = {
     // },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-netlify-identity-widget",
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.tsx`,
-        publicPath: `admin/test2`,
+        publicPath: `admin/test`,
       },
     },
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.tsx`,
-        publicPath: `admin/test`,
+        publicPath: `admin/test2`,
       },
     },
     // "gatsby-plugin-netlify", // make sure to keep it last in the array
