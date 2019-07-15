@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   accept_roles:
-    - Editor
+    - editor
   branch: master
 
 # publish_mode: editorial_workflow
