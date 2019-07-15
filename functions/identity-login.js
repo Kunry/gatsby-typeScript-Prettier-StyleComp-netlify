@@ -1,14 +1,9 @@
 
-const pepe = () => {
-    console.log("Llamo a pepe");
-    console.log(window)
-}
-
 
 exports.handler = function(event, context, callback) {
-  pepe();
   console.log("--------------");
-//   console.log(Object.values(this.process));
+  console.log(Object.values(event));
+  console.log(Object.values(context));
   callback(null, {
     statusCode: 200
   });
