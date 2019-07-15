@@ -110,6 +110,8 @@ module.exports = {
       options: {
         modulePath: `${__dirname}/src/cms/cms.tsx`,
         publicPath: `admin/test2`,
+        enableIdentityWidget: true
+
       },
     },
     // "gatsby-plugin-netlify", // make sure to keep it last in the array
