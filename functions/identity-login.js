@@ -7,6 +7,6 @@ exports.handler = function(event, context, callback) {
   console.log(body);
   callback(null, {
     statusCode: 200,
-    body: JSON.stringify({app_metadata: {authorization: {roles: ["admin"]}}})
+    body: JSON.stringify({"input": {"app_metadata": {"authorization": {"roles": ["admin"]}}}})
   });
 };
