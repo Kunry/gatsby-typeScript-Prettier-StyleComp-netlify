@@ -5,3 +5,10 @@
   YARN_VERSION = "1.9.4"
   YARN_FLAGS = "--no-ignore-optional"
   NODE_VERSION= "10.10.0"
+
+
+[[redirects]]
+  from = "/admin/*"
+  status = 200
+  conditions = {Role = ["admin"]}
+  force = true
