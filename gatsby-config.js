@@ -102,6 +102,7 @@ module.exports = {
       options: {
         modulePath: `${__dirname}/src/cms/cms.tsx`,
         publicPath: `admin/test`,
+        enableIdentityWidget: false
       },
     },
     {
