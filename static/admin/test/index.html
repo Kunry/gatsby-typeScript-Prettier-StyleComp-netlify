@@ -4,24 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <script src="netlify-identity-widget.js"></script>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <script src="netlify-cms.js"></script>
+    <div data-netlify-identity-menu></div>
+
+    <!-- Add a simpler button:
+      Simple button that will open the modal.
+    -->
+    <div data-netlify-identity-button>Login with Netlify Identity</div>
+  <!-- Include the script that builds the page and powers Netlify CMS -->
   <script>
-      console.log("entra");
+      const user = netlifyIdentity.currentUser();
+      console.info(user);
   </script>
-  <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-        console.log(user);
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
 </body>
 </html>
