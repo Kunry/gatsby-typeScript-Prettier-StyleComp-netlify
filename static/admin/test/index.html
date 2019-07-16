@@ -6,18 +6,29 @@
   <title>Content Manager</title>
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-    <div data-netlify-identity-menu></div>
+    <!-- <div data-netlify-identity-menu></!--> -->
 
     <!-- Add a simpler button:
       Simple button that will open the modal.
     -->
-    <div data-netlify-identity-button>Login with Netlify Identity</div>
+    <!-- <div data-netlify-identity-button>Login with Netlify Identity</div> -->
   <!-- Include the script that builds the page and powers Netlify CMS -->
+  <script src="../../../node_modules/netlify-cms/dist/cms.js"></script>
+
   <script>
-      const user = netlifyIdentity.currentUser();
-      console.info(user);
-  </script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+            console.log(user);
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
 </body>
 </html>
