@@ -6,10 +6,3 @@
   YARN_FLAGS = "--no-ignore-optional"
   NODE_VERSION= "10.10.0"
 
-
-[[redirects]]
-  from = "/admin/test"
-  conditions = {Role = ["admin"]}
-  status = 200
-  to = "/admin/test2"
-  force = true
