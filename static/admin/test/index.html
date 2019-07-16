@@ -6,17 +6,15 @@
   <title>Content Manager</title>
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-    <!-- <div data-netlify-identity-menu></!--> -->
+    <div data-netlify-identity-menu></div>
 
     <!-- Add a simpler button:
       Simple button that will open the modal.
     -->
-    <!-- <div data-netlify-identity-button>Login with Netlify Identity</div> -->
+    <div data-netlify-identity-button>Login with Netlify Identity</div>
   <!-- Include the script that builds the page and powers Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 
   <script>
       if (window.netlifyIdentity) {
@@ -24,7 +22,7 @@
             console.log(user);
           if (!user) {
             window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
+              document.location.href = "/admgin/";
             });
           }
         });
