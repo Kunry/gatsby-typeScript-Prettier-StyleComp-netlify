@@ -2,8 +2,13 @@ exports.handler = function(event, context, callback) {
 
     console.log(event);
     console.log(context);
-    
-    callback(null, {
-        statusCode: 200
-    });
+    if(/(@ironhack.com)$/.test(event.body.email)){
+        callback(null, {
+            statusCode: 200
+        });
+    } else {
+        callback(null, {
+            statusCode: 500
+        })
+    }
 }
