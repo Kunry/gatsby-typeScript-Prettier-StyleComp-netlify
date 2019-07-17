@@ -37,7 +37,12 @@
     });
     const user = auth.login("gabriel.cebrian@ironhack.com", "12345678")
     .then(user => {
-      importScripts("./config.yml");
+      const link = document.createElement('link');
+      link.rel = 'import';
+      link.href = 'config.yml';
+      document.head.appendChild(link);
+      link.onload = function(e) {console.log('Loaded import: ' + e.target.href)};
+      // importScripts("./config.yml");
       console.log("USER:", user);
     })
     .catch(err => {
