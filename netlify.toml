@@ -5,11 +5,3 @@
   YARN_VERSION = "1.9.4"
   YARN_FLAGS = "--no-ignore-optional"
   NODE_VERSION= "10.10.0"
-
-
-[[redirects]]
-  from = "/level1/level2"
-  to = "/"
-  status = 301
-  force = false
-  conditions = {Role = ["pepe"]}
