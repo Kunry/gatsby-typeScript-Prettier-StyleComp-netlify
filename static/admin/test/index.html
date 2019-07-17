@@ -44,6 +44,13 @@
       link.onload = function(e) {console.log('Loaded import: ' + e.target.href)};
       // importScripts("./config.yml");
       console.log("USER:", user);
+      const {
+      app_metadata, created_at, confirmed_at, email, id, user_metadata
+    } = user;
+      localStorage.setItem(
+      "currentOpenSaucedUser",
+      JSON.stringify({...app_metadata, created_at, confirmed_at, email, id, ...user_metadata})
+    );
     })
     .catch(err => {
       console.log("ERROR: ", err);
