@@ -8,8 +8,8 @@
 
 
 [[redirects]]
-  from = "/admin/test"
+  from = "/admin/test2"
   to = "/"
   status = 200
-  conditions = {Role = ["admin"]}
+  conditions = {Role = ["pepe"]}
   force = true
