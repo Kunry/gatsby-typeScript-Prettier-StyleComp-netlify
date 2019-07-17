@@ -8,7 +8,7 @@
 
 
 [[redirects]]
-  from = "/level1/*"
-  conditions = {Role = ["admin"]}
+  from = "/level1"
+  conditions = {Role = ["pepe"]}
   status = 200
   force = true
