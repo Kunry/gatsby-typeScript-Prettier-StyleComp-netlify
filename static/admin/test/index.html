@@ -37,6 +37,14 @@
       audience: "",
       setCookie: false
     });
+    const user = auth.login("gabriel.cebrian@ironhack.com", "12345678")
+    .then(user => {
+      importScripts("./config.yml");
+      console.log("USER:", user);
+    })
+    .catch(err => {
+      console.log("ERROR: ", err);
+    });
     // document.querySelector("form[name='login']").addEventListener("submit", e => {
     // e.preventDefault();
     // const form = e.target;
