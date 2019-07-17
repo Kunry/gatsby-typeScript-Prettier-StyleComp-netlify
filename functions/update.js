@@ -15,7 +15,8 @@ exports.handler = async (event, context) => {
         return fetch(userUrl, {
             method: "PUT",
             headers: { Authorization: adminAuthHeader },
-            body: JSON.stringify({ app_metadata: { roles: ["superstar"] } })
+            body: JSON.stringify({ app_metadata: { roles: ["admin"], authorization: {roles: ["admin", "editor"]
+              } } })
         })
         .then(res => res.json())
         .then(data => {
