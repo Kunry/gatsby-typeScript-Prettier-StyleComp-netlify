@@ -31,6 +31,7 @@
     "github-buttons": "git+https://github.com/ntkme/github-buttons.git",
     "gotrue-js": "^0.9.25",
     "netlify-cms": "^2.1.1",
+    "node-fetch": "^2.6.0",
     "node-sass": "^4.9.2",
     "normalize.css": "^8.0.0",
     "open-color": "^1.6.3",
