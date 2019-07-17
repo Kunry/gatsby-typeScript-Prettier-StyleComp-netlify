@@ -17,12 +17,16 @@
   <!-- Include the script that builds the page and powers Netlify CMS -->
 
   <script>
+    import GoTrue from "gotrue-js";
+
+    console.log(GoTrue);
+    
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
             console.log(user);
           if (!user) {
             window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admgin/";
+              document.location.href = "/admin/";
             });
           }
         });
