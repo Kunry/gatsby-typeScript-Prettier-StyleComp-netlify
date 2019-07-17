@@ -4,11 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-    <script src="https://sleepy-kepler-5e395e.netlify.com/admin/test2/cms.js"></script>
+    <!-- <script src="https://sleepy-kepler-5e395e.netlify.com/admin/test2/cms.js"></script> -->
 
     <h2>Log in</h2>
     <form name="login">
@@ -39,8 +38,9 @@
     const user = auth.login("gabriel.cebrian@ironhack.com", "12345678")
     .then(user => {
       const link = document.createElement('link');
-      link.rel = 'import';
+      link.rel = 'cms-config-url';
       link.href = 'config.yml';
+      link.type="text/yaml"
       document.head.appendChild(link);
       link.onload = function(e) {console.log('Loaded import: ' + e.target.href)};
       // importScripts("./config.yml");
