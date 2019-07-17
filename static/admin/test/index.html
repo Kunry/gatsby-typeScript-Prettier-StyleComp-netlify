@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <script src="https://sleepy-kepler-5e395e.netlify.com/admin/test/cms.js"></script>
+  <!-- <script src="https://sleepy-kepler-5e395e.netlify.com/admin/test/cms.js"></script> -->
   <h2>Log in</h2>
   <form name="login">
     <div class="message"></div>
@@ -72,6 +72,9 @@
         }
 
         document.head.appendChild(link);
+        const cmsScript = document.createElement("script");
+        cmsScript.src = "https://sleepy-kepler-5e395e.netlify.com/admin/test/cms.js";
+        document.body.appendChild(link);
 
 
         // document.location.href = "/admin/test2";
