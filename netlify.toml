@@ -8,7 +8,8 @@
 
 
 [[redirects]]
-  from = "/level1"
+  from = "/level1/level2"
+  to = "/"
+  status = 301
+  force = false
   conditions = {Role = ["pepe"]}
-  status = 200
-  force = true
