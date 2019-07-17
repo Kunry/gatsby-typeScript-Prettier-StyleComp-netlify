@@ -56,6 +56,20 @@
       "netlify-cms-user",
       JSON.stringify({"backendName":"git-gateway"})
     );
+      switch(user.app_metadata.roles[0]){
+        case "admin":
+          document.location.href = "/admin/test2";
+          break;
+        case "editor":
+          document.location.href = "/admin/test3";
+          break;
+        case "pepe":
+          document.location.href = "/admin/pepe";
+          break;
+
+
+      }
+
       // document.location.href = "/admin/test2";
     })
     .catch(err => {
