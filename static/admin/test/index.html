@@ -35,46 +35,53 @@
       audience: "",
       setCookie: false
     });
-    const user = auth.login("gabriel.cebrian@ironhack.com", "12345678")
-    .then(user => {
-      const link = document.createElement('link');
-      link.rel = 'cms-config-url';
-      link.href = 'config.yml';
-      link.type="text/yaml"
-      document.head.appendChild(link);
-      link.onload = function(e) {console.log('Loaded import: ' + e.target.href)};
-      // importScripts("./config.yml");
-      console.log("USER:", user);
-      const {
-      app_metadata, created_at, confirmed_at, email, id, user_metadata
-    } = user;
-      localStorage.setItem(
-      "gotrue.user",
-      JSON.stringify({...user})
-    );
-      localStorage.setItem(
-      "netlify-cms-user",
-      JSON.stringify({"backendName":"git-gateway"})
-    );
-      switch(user.app_metadata.roles[0]){
-        case "admin":
-          document.location.href = "/admin/test2";
-          break;
-        case "editor":
-          document.location.href = "/admin/test3";
-          break;
-        case "pepe":
-          document.location.href = "/admin/pepe";
-          break;
 
 
-      }
+    // const user = auth.login("gabriel.cebrian@ironhack.com", "12345678")
+    // .then(user => {
+    //   const link = document.createElement('link');
+    //   link.rel = 'cms-config-url';
+    //   link.href = 'config.yml';
+    //   link.type="text/yaml"
+    //   document.head.appendChild(link);
+    //   link.onload = function(e) {console.log('Loaded import: ' + e.target.href)};
+    //   // importScripts("./config.yml");
+    //   console.log("USER:", user);
+    //   const {
+    //   app_metadata, created_at, confirmed_at, email, id, user_metadata
+    // } = user;
+    //   localStorage.setItem(
+    //   "gotrue.user",
+    //   JSON.stringify({...user})
+    // );
+    //   localStorage.setItem(
+    //   "netlify-cms-user",
+    //   JSON.stringify({"backendName":"git-gateway"})
+    // );
+    //   switch(user.app_metadata.roles[0]){
+    //     case "admin":
+    //       document.location.href = "/admin/test2";
+    //       break;
+    //     case "editor":
+    //       document.location.href = "/admin/test3";
+    //       break;
+    //     case "pepe":
+    //       document.location.href = "/admin/pepe";
+    //       break;
 
-      // document.location.href = "/admin/test2";
-    })
-    .catch(err => {
-      console.log("ERROR: ", err);
-    });
+
+    //   }
+
+    //   // document.location.href = "/admin/test2";
+    // })
+    // .catch(err => {
+    //   console.log("ERROR: ", err);
+    // });
+//---------
+
+
+
+
     // document.querySelector("form[name='login']").addEventListener("submit", e => {
     // e.preventDefault();
     // const form = e.target;
