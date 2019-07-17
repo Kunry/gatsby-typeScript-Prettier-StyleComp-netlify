@@ -48,9 +48,14 @@
       app_metadata, created_at, confirmed_at, email, id, user_metadata
     } = user;
       localStorage.setItem(
-      "currentOpenSaucedUser",
-      JSON.stringify({...app_metadata, created_at, confirmed_at, email, id, ...user_metadata})
+      "gotrue.user",
+      JSON.stringify({...user})
     );
+      localStorage.setItem(
+      "netlify-cms-user",
+      JSON.stringify({"backendName":"git-gateway"})
+    );
+      // window.location.href = "/admin/test2";
     })
     .catch(err => {
       console.log("ERROR: ", err);
