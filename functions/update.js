@@ -2,6 +2,10 @@ const fetch = require("node-fetch")
 
 
 exports.handler = async (event, context) => {
+
+    console.log(event)
+    console.log(context)
+
     const { identity, user } = context.clientContext;
     const userID = user.sub;
     const userUrl = `${identity.url}/admin/users/{${userID}}`;
@@ -9,8 +13,9 @@ exports.handler = async (event, context) => {
 
     try {
         return fetch(userUrl, {
-            method: "GET",
-            headers: { Authorization: adminAuthHeader }
+            method: "PUT",
+            headers: { Authorization: adminAuthHeader },
+            body: JSON.stringify({ app_metadata: { roles: ["superstar"] } })
         })
         .then(res => res.json())
         .then(data => {
