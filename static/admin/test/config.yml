@@ -18,14 +18,20 @@ collections:
     slug: "{{date}}-{{slug}}"
     indetifier_field: Blog
     fields:
-      - { label: "Language", name: "language", widget: select, options: 
-          [{ label: "Spanish", value: "es" } 
-          { label: "English", value: "en" }
-          { label: "French", value: "fr" }]}
-      - { label: "Primary Category", name: "primaryCategory", widget: select, options:
-          [{ lable: "Web dev", value: "WDb"}
-          { label: "UX/UI", value: "UX-UI"}
-          { label: "DATA", value: "DT"}]}
+      -  label: "Language"
+          name: "language"
+          widget: select
+          options: 
+            - { label: "Spanish", value: "es" } 
+            - { label: "English", value: "en" }
+            - { label: "French", value: "fr" }
+      -  label: "Primary Category"
+         name: "primaryCategory"
+         widget: select
+         options:
+          - { lable: "Web dev", value: "WDb"}
+          - { label: "UX/UI", value: "UX-UI"}
+          - { label: "DATA", value: "DT"}
       - { label: "Second Category", name: "secondCategory", widget: select, required: false, options:
           [{ lable: "Madrid", value: "madrid"}
           { label: "Barcelona", value: "barcelona"}
