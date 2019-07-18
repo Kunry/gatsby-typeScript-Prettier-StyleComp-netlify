@@ -31,15 +31,34 @@
   <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script src="previews.js" type="text/babel"></script>
+
+  <div class="Modal-Users">
+  </div>
   <script>
+    const ModalOption = { element: document.querySelector("Modal-Users"), open: false };
     const li = document.createElement("li");
     const button = document.createElement("button");
     button.className = "css-k33oaq-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton e16dayda1";
     const span = document.createElement("span");
     span.className = "ei6fm2r1 css-tg1x8v-IconWrapper ei6fm2r0";
-    span.innerHTML = "List Users"
     li.appendChild(button);
     button.appendChild(span);
+    button.innerHTML += "List Users"
+    document.querySelector("nav").children[0].appendChild(li)
+    button.onclick = () => {
+      ModalOption.open = !ModalOption
+      ModalOption.element.innerHTML = `
+          <div class="css-1cx9csd css-1ztge6">
+            <div>
+              <span>PEPE</span>
+            </div>
+          </div>
+        `;
+      
+      document.querySelector(".css-1cx9csd").onclick = () => {
+        ModalOption.element.innerHTML = ""
+      }
+    }
   </script>
   <script>
 
@@ -73,7 +92,6 @@
       //   });
       // }
   </script>
-
 
 
 </body>

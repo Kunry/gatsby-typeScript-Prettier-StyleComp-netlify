@@ -11,7 +11,33 @@ publish_mode: editorial_workflow
 
 collections:
 
-
+  - label: "Blog"
+    name: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{date}}-{{slug}}"
+    indetifier_field: Blog
+    fields:
+      - { label: "Language", name: "language", widget: select, options: 
+          [{ label: "Spanish", value: "es" } 
+          { label: "English", value: "en" }
+          { label: "French", value: "fr" }]}
+      - { label: "Primary Category", name: "primaryCategory", widget: select, options:
+          [{ lable: "Web dev", value: "WDb"}
+          { label: "UX/UI", value: "UX-UI"}
+          { label: "DATA", value: "DT"}]}
+      - { label: "Second Category", name: "secondCategory", widget: select, required: false, options:
+          [{ lable: "Madrid", value: "madrid"}
+          { label: "Barcelona", value: "barcelona"}
+          { label: "Berlin", value: "berlin"}]}
+      - { label: "Title", name: "title", widget: "string" pattern: [".{,12}", "max 12"]}
+      - { label: "Subtitle", name: subtitle, widget: "string", required: false}
+      # - { label: "URL", name: url, widget: "URL"}
+      # - { label: "Topic", name: "topic", widget: "autocomplete" }
+      - { label: "Meta title", name: metaTitle, widget: "stringCustom", min: 50, max: 60}
+      - { label: "Meta description", name: metaDescription, widget: "stringCustom", min: 1, max: 160}
+      # - { label: "Header image", name: "headerImage", widget: "image"}
+      - { label: " Body", name: "body", widger: Markdown}
 
   - name: "docs" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Docs" # Used in the UI, ie.: "New Post"
@@ -43,19 +69,19 @@ collections:
 
 
 
-  - name: "blog"
-    label: "Blog"
-    label_singular: "Post"
-    folder: "content/website/content/blog"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Author", name: "author", widget: "string"}
-      - {label: "Description (for blog list)", name: "description", widget: "text"}
-      - {label: "Meta Description (defaults to Description)", name: "meta_description", widget: "text", required: false}
-      - {label: "Twitter Image", name: "twitter_image", widget: "image"}
-      - {label: "Date", name: "date", widget: "date"}
-      - {label: "Body", name: "body", widget: "markdown"}
+  # - name: "blog"
+  #   label: "Blog"
+  #   label_singular: "Post"
+  #   folder: "content/website/content/blog"
+  #   create: true
+  #   fields:
+  #     - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+  #     - {label: "Author", name: "author", widget: "string"}
+  #     - {label: "Description (for blog list)", name: "description", widget: "text"}
+  #     - {label: "Meta Description (defaults to Description)", name: "meta_description", widget: "text", required: false}
+  #     - {label: "Twitter Image", name: "twitter_image", widget: "image"}
+  #     - {label: "Date", name: "date", widget: "date"}
+  #     - {label: "Body", name: "body", widget: "markdown"}
   - name: updates
     label: Updates
     files:
