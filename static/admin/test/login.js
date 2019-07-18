@@ -1,4 +1,4 @@
-const login = (email, pass) => auth
+auth
   .login("gabriel.cebrian@ironhack.com", "12345678")
   .then(user => {
     // importScripts("./config.yml");
