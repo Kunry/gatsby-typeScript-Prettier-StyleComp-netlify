@@ -9,19 +9,25 @@ const user = auth
   .then(user => {
     // importScripts("./config.yml");
     console.log("USER:", user);
-    localStorage.setItem("gotrue.user", JSON.stringify({ ...user }));
+    const {
+        app_metadata, created_at, confirmed_at, email, id, user_metadata
+      } = user;
+    localStorage.setItem("gotrue.user", JSON.stringify({
+        app_metadata, created_at, confirmed_at, email, id, user_metadata
+      }));
     localStorage.setItem(
       "netlify-cms-user",
       JSON.stringify({ backendName: "git-gateway" })
     );
     const link = document.createElement("link");
-    link.rel = "cms-config-url";
-    link.href = `${user.app_metadata.roles[0]}.yml`;
+    link.href = `./${user.app_metadata.roles[0]}.yml`;
     link.type = "text/yaml";
+    link.rel = "cms-config-url";
     link.onload = function(e) {
       console.log("Loaded import: " + e.target.href);
     };
-
+    
+    
     document.head.appendChild(link);
     const cmsScript = document.createElement("script");
     cmsScript.src =
