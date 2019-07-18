@@ -1,19 +1,10 @@
-const auth = new GoTrue({
-  APIUrl: "https://sleepy-kepler-5e395e.netlify.com/.netlify/identity",
-  audience: "",
-  setCookie: false,
-});
-
-const user = auth
+const login = (email, pass) => auth
   .login("gabriel.cebrian@ironhack.com", "12345678")
   .then(user => {
     // importScripts("./config.yml");
     console.log("USER:", user);
-    const {
-        app_metadata, created_at, confirmed_at, email, id, user_metadata
-      } = user;
     localStorage.setItem("gotrue.user", JSON.stringify({
-        app_metadata, created_at, confirmed_at, email, id, user_metadata
+        ...user
       }));
     localStorage.setItem(
       "netlify-cms-user",

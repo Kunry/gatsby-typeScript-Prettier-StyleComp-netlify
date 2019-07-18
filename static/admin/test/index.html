@@ -6,12 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <!-- <link href="./pepe.yml" type="text/yaml" rel="cms-config-url"> -->
 </head>
 
 <body>
-  <!-- <script src="https://sleepy-kepler-5e395e.netlify.com/admin/test/cms.js"></script> -->
-  <h2>Log in</h2>
+  <!-- <h2>Log in</h2>
   <form name="login">
     <div class="message"></div>
     <p>
@@ -21,71 +19,16 @@
       <label>Password<br /><input type="password" name="password" required /></label>
     </p>
     <button type="submit">Log in</button>
-  </form>
-  <!-- <div data-netlify-identity-menu></div> -->
+  </form> -->
 
-  <!-- Add a simpler button:
-      Simple button that will open the modal.
-    -->
-  <!-- <div data-netlify-identity-button>Login with Netlify Identity</div> -->
-  <!-- Include the script that builds the page and powers Netlify CMS -->
-  <script src="./script.js"></script>
+
+  
+  <script src="./GoTrue.js"></script>
+  <script src="./login.js"></script>
+  <!-- <script src="./signup.js"></script> -->
+
+
   <script>
-
-    // const auth = new GoTrue({
-    //   APIUrl: "https://sleepy-kepler-5e395e.netlify.com/.netlify/identity",
-    //   audience: "",
-    //   setCookie: false
-    // });
-
-
-    // const user = auth.login("gabriel.cebrian@ironhack.com", "12345678")
-    //   .then(user => {
-    //     const link = document.createElement('link');
-    //     link.rel = 'cms-config-url';
-
-    //     link.type = "text/yaml"
-    //     link.onload = function (e) { console.log('Loaded import: ' + e.target.href) };
-    //     // importScripts("./config.yml");
-    //     console.log("USER:", user);
-    //     const {
-    //       app_metadata, created_at, confirmed_at, email, id, user_metadata
-    //     } = user;
-    //     localStorage.setItem(
-    //       "gotrue.user",
-    //       JSON.stringify({ ...user })
-    //     );
-    //     localStorage.setItem(
-    //       "netlify-cms-user",
-    //       JSON.stringify({ "backendName": "git-gateway" })
-    //     );
-    //     switch (user.app_metadata.roles[0]) {
-    //       case "admin":
-    //         link.href = 'admin.yml';
-    //         break;
-    //       case "editor":
-    //         link.href = 'editor.yml';
-    //         break;
-    //       case "pepe":
-    //         link.href = 'pepe.yml';
-    //         break;
-    //     }
-
-    //     document.head.appendChild(link);
-    //     const cmsScript = document.createElement("script");
-    //     cmsScript.src = "https://sleepy-kepler-5e395e.netlify.com/admin/test/cms.js";
-    //     document.body.appendChild(link);
-
-
-    //     // document.location.href = "/admin/test2";
-    //   })
-    //   .catch(err => {
-    //     console.log("ERROR: ", err);
-    //   });
-//---------
-
-
-
 
     // document.querySelector("form[name='login']").addEventListener("submit", e => {
     // e.preventDefault();
@@ -117,6 +60,7 @@
       //   });
       // }
   </script>
+
 </body>
 
 </html>

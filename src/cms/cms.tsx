@@ -186,3 +186,10 @@ class ObjControl extends React.Component<ControlObjProps, any> {
 }
 
 CMS.registerWidget("CustomObject", ObjControl, TestPreview);
+
+// tslint:disable-next-line: no-console
+console.log("-------------------------");
+// tslint:disable-next-line: no-console
+console.info(CMS);
+// tslint:disable-next-line: no-console
+console.log("-------------------------");
