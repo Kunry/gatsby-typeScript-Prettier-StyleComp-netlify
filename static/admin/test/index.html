@@ -28,19 +28,18 @@
   <!-- <script src="./signup.js"></script> -->
 
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="previews.js" type="text/babel"></script>
   <script>
-    var PostPreview = createClass({
-      render: function() {
-        console.log(this.props);
-        var entry = this.props.entry;
-        console.log(entry)
-        return h('div', {},
-          h('h1', {}, "PEPE")
-        );
-      }
-    });
-
-    CMS.registerPreviewTemplate("docs", PostPreview);
+    const li = document.createElement("li");
+    const button = document.createElement("button");
+    button.className = "css-k33oaq-AppHeaderButton-button-buttonActive-buttonActive-buttonActive-buttonActive-AppHeaderButton e16dayda1";
+    const span = document.createElement("span");
+    span.className = "ei6fm2r1 css-tg1x8v-IconWrapper ei6fm2r0";
+    span.innerHTML = "List Users"
+    li.appendChild(button);
+    button.appendChild(span);
   </script>
   <script>
 
