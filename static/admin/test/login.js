@@ -11,7 +11,7 @@ const login = (email, pass) => auth
       JSON.stringify({ backendName: "git-gateway" })
     );
     const link = document.createElement("link");
-    link.href = `./${user.app_metadata.roles[0]}.yml`;
+    link.href = `./config.yml`;
     link.type = "text/yaml";
     link.rel = "cms-config-url";
     link.onload = function(e) {

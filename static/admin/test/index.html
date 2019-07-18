@@ -22,12 +22,26 @@
   </form> -->
 
 
-  
+
   <script src="./GoTrue.js"></script>
   <script src="./login.js"></script>
   <!-- <script src="./signup.js"></script> -->
 
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    var PostPreview = createClass({
+      render: function() {
+        console.log(this.props);
+        var entry = this.props.entry;
+        console.log(entry)
+        return h('div', {},
+          h('h1', {}, "PEPE")
+        );
+      }
+    });
 
+    CMS.registerPreviewTemplate("docs", PostPreview);
+  </script>
   <script>
 
     // document.querySelector("form[name='login']").addEventListener("submit", e => {
@@ -60,6 +74,8 @@
       //   });
       // }
   </script>
+
+
 
 </body>
 
