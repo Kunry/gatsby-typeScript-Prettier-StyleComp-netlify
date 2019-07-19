@@ -151,13 +151,13 @@ class StringControl extends React.Component<ControlStringProps, any> {
     // return false
     return (
       (value.length >= min && value.length <= max) || {
-        error: { message: `Length between ${min} and ${max} characters.` },
+        error: { message: `Length between ${min} and ${max} characters. PEPE` },
       }
     );
   };
   public render() {
     // tslint:disable-next-line: no-debugger
-    debugger;
+    console.log(this);
     const max = this.props.field.get("max");
     // console.log("--------------------")
     // console.log(this)
