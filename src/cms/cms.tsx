@@ -146,6 +146,8 @@ class StringControl extends React.Component<ControlStringProps, any> {
     const { value } = this.props;
     const max = this.props.field.get("max");
     const min = this.props.field.get("min");
+    // tslint:disable-next-line: no-debugger
+    debugger;
     // console.log("--------------------");
     // console.log(this.props, max, min);
     // return false
