@@ -10,9 +10,6 @@ media_folder: static/assets
 public_folder: /assets
 
 collections:
-
-
-
   - label: "Blog"
     name: "Blog"
     folder: "content/blog"
