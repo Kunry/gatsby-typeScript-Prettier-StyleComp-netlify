@@ -1,49 +1,49 @@
-# backend:
-#   name: git-gateway
-#   accept_roles:
-#     - editor
-#   branch: master
+backend:
+  name: git-gateway
+  accept_roles:
+    - editor
+  branch: master
 
 
-# publish_mode: editorial_workflow
-# media_folder: static/assets
-# public_folder: /assets
+publish_mode: editorial_workflow
+media_folder: static/assets
+public_folder: /assets
 
-# collections:
-#   - label: "Blog"
-#     name: "Blog"
-#     folder: "content/blog"
-#     create: true
-#     slug: "{{date}}-{{slug}}"
-#     indetifier_field: Blog
-#     fields:
-#       -  label: "Language"
-#          name: "language"
-#          widget: select
-#          options: 
-#            - { label: "Spanish", value: "es" } 
-#            - { label: "English", value: "en" }
-#            - { label: "French", value: "fr" }
-#       -  label: "Primary Category"
-#          name: "primaryCategory"
-#          widget: select
-#          options:
-#           - { label: "Web dev", value: "WDb"}
-#           - { label: "UX/UI", value: "UX-UI"}
-#           - { label: "DATA", value: "DT"}
-#       -  label: "Second Category"
-#          name: "secondCategory"
-#          widget: select
-#          required: false
-#          options:
-#           - { label: "Madrid", value: "madrid"}
-#           - { label: "Barcelona", value: "barcelona"}
-#           - { label: "Berlin", value: "berlin"}
-#       - { label: "Title", name: "title", widget: "string"}
-#       - { label: "Subtitle", name: subtitle, widget: "string", required: false}
-#       # - { label: "URL", name: url, widget: "URL"}
-#       # - { label: "Topic", name: "topic", widget: "autocomplete" }
-#       - { label: "Meta title", name: metaTitle, widget: "customString", min: 50, max: 60}
-#       - { label: "Meta description", name: metaDescription, widget: "customString", min: 1, max: 160}
-#       # - { label: "Header image", name: "headerImage", widget: "image"}
-#       - { label: " Body", name: "body", widger: Markdown}
+collections:
+  - label: "Blog"
+    name: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{date}}-{{slug}}"
+    indetifier_field: Blog
+    fields:
+      -  label: "Language"
+         name: "language"
+         widget: select
+         options: 
+           - { label: "Spanish", value: "es" } 
+           - { label: "English", value: "en" }
+           - { label: "French", value: "fr" }
+      -  label: "Primary Category"
+         name: "primaryCategory"
+         widget: select
+         options:
+          - { label: "Web dev", value: "WDb"}
+          - { label: "UX/UI", value: "UX-UI"}
+          - { label: "DATA", value: "DT"}
+      -  label: "Second Category"
+         name: "secondCategory"
+         widget: select
+         required: false
+         options:
+          - { label: "Madrid", value: "madrid"}
+          - { label: "Barcelona", value: "barcelona"}
+          - { label: "Berlin", value: "berlin"}
+      - { label: "Title", name: "title", widget: "string"}
+      - { label: "Subtitle", name: subtitle, widget: "string", required: false}
+      # - { label: "URL", name: url, widget: "URL"}
+      # - { label: "Topic", name: "topic", widget: "autocomplete" }
+      - { label: "Meta title", name: metaTitle, widget: "customString", min: 50, max: 60}
+      - { label: "Meta description", name: metaDescription, widget: "customString", min: 1, max: 160}
+      # - { label: "Header image", name: "headerImage", widget: "image"}
+      - { label: " Body", name: "body", widger: Markdown}
