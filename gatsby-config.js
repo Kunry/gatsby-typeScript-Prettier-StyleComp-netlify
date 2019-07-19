@@ -109,18 +109,7 @@ module.exports = {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.tsx`,
-        publicPath: `admin/test2`,
-        enableIdentityWidget: true
-
-      },
-    },
-    {
-      resolve: "gatsby-plugin-netlify-cms",
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.tsx`,
-        publicPath: `admin/test3`,
-        enableIdentityWidget: true
-
+        publicPath: `admin/test2`
       },
     },
     // "gatsby-plugin-netlify", // make sure to keep it last in the array
