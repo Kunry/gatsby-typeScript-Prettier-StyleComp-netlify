@@ -46,11 +46,11 @@ collections:
       - { label: "Meta title", name: metaTitle, widget: "customString", min: 50, max: 60}
       - { label: "Meta description", name: metaDescription, widget: "customString", min: 1, max: 160}
       -  label: "Strings"
-          name: string
-          widget: "customStringURL"
-          min: 1
-          max: 160
-          fields: 
-            - { label: "Pepe", name: "pepe", widget: "string"}
+         name: string
+         widget: "customStringURL"
+         min: 1
+         max: 160
+         fields: 
+          - { label: "Pepe", name: "pepe", widget: "string"}
       # - { label: "Header image", name: "headerImage", widget: "image"}
       - { label: " Body", name: "body", widger: Markdown}
