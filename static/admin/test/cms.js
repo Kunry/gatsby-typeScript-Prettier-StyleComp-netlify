@@ -1149,7 +1149,7 @@
     
           return value.length >= min && value.length <= max || {
             error: {
-              message: "Length between " + min + " and " + max + " characters."
+              message: "Length between " + min + " and " + max + " characters. PEPE"
             }
           };
         };
@@ -1163,6 +1163,8 @@
       var _proto = StringControl.prototype;
     
       _proto.render = function render() {
+        // tslint:disable-next-line: no-debugger
+        console.log(this);
         var max = this.props.field.get("max"); // console.log("--------------------")
         // console.log(this)
     
@@ -1175,42 +1177,42 @@
     
     netlify_cms__WEBPACK_IMPORTED_MODULE_1___default.a.registerWidget("customString", StringControl, TestPreview);
     
-    // tslint:disable-next-line: max-classes-per-file
-    var ObjControl =
-    /*#__PURE__*/
-    function (_React$Component2) {
-      _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_0___default()(ObjControl, _React$Component2);
-    
-      function ObjControl() {
-        var _this2;
-    
-        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-          args[_key] = arguments[_key];
-        }
-    
-        _this2 = _React$Component2.call.apply(_React$Component2, [this].concat(args)) || this;
-    
-        _this2.isValid = function () {
-          var value = _this2.props.value;
-          return false;
-        };
-    
-        return _this2;
-      }
-    
-      var _proto2 = ObjControl.prototype;
-    
-      _proto2.render = function render() {
-        // tslint:disable-next-line: no-console
-        console.log(this.props);
-        var ObjWidget = netlify_cms__WEBPACK_IMPORTED_MODULE_1___default.a.getWidget("object").control;
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(ObjWidget, this.props);
-      };
-    
-      return ObjControl;
-    }(react__WEBPACK_IMPORTED_MODULE_2___default.a.Component);
-    
-    netlify_cms__WEBPACK_IMPORTED_MODULE_1___default.a.registerWidget("CustomObject", ObjControl, TestPreview);
+   // tslint:disable-next-line: max-classes-per-file
+var ObjControl =
+/*#__PURE__*/
+function (_React$Component2) {
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_0___default()(ObjControl, _React$Component2);
+
+  function ObjControl() {
+    var _this2;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this2 = _React$Component2.call.apply(_React$Component2, [this].concat(args)) || this;
+
+    _this2.isValid = function () {
+      var value = _this2.props.value;
+      return false;
+    };
+
+    return _this2;
+  }
+
+  var _proto2 = ObjControl.prototype;
+
+  _proto2.render = function render() {
+    // tslint:disable-next-line: no-console
+    console.log(this.props);
+    var ObjWidget = netlify_cms__WEBPACK_IMPORTED_MODULE_1___default.a.getWidget("object").control;
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(ObjWidget, this.props);
+  };
+
+  return ObjControl;
+}(react__WEBPACK_IMPORTED_MODULE_2___default.a.Component);
+
+netlify_cms__WEBPACK_IMPORTED_MODULE_1___default.a.registerWidget("CustomObject", ObjControl, TestPreview); // tslint:disable-next-line: no-console
     
     /***/ }),
     /* 7 */
