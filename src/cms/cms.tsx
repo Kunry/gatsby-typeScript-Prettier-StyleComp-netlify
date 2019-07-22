@@ -159,19 +159,52 @@ class StringControl extends React.Component<ControlStringProps, any> {
     // tslint:disable-next-line: no-debugger
     console.log(this);
     debugger;
+    const max = this.props.field.get("max");
+    // console.log("--------------------")
+    // console.log(this)
     const StringWidget = CMS.getWidget("string").control;
-    const StringWidget2 = CMS.getWidget("string").control;
-    console.log(StringWidget)
-    return (
-      <>
-        <StringWidget {...this.props} />
-        <StringWidget2 {...this.props} />
-      </>
-    );
+    return <StringWidget {...this.props} />;
   }
 }
 
 CMS.registerWidget("customString", StringControl, TestPreview);
+
+
+// tslint:disable-next-line: max-classes-per-file
+class StringControlURL extends React.Component<ControlStringProps, any> {
+  constructor(props: ControlStringProps) {
+    super(props);
+    this.state = {
+      collapsed: false,
+    };
+  }
+
+  public isValid = () => {
+    const { value } = this.props;
+    const max = this.props.field.get("max");
+    const min = this.props.field.get("min");
+    // console.log("--------------------");
+    // console.log(this.props, max, min);
+    // return false
+    return (
+      (value.length >= min && value.length <= max) || {
+        error: { message: `Length between ${min} and ${max} characters. PEPE` },
+      }
+    );
+  };
+  public render() {
+    // tslint:disable-next-line: no-debugger
+    console.log(this);
+    debugger;
+    const max = this.props.field.get("max");
+    // console.log("--------------------")
+    // console.log(this)
+    const StringWidget = CMS.getWidget("string").control;
+    return <StringWidget {...this.props} />;
+  }
+}
+
+CMS.registerWidget("customStringURL", StringControlURL, TestPreview);
 
 interface ControlObjProps {
   value: object;
