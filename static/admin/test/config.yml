@@ -46,6 +46,25 @@ collections:
       # - { label: "Topic", name: "topic", widget: "autocomplete" }
       - { label: "Meta title", name: metaTitle, widget: "customString", min: 50, max: 60}
       - { label: "Meta description", name: metaDescription, widget: "customString", min: 1, max: 160}
+      -  label: "Object"
+         name: string
+         widget: "CustomObject"
+         fields: 
+          - label: "Language"
+            name: "language"
+            widget: select
+            options: 
+              - { label: "Spanish", value: "es" } 
+              - { label: "English", value: "en" }
+              - { label: "French", value: "fr" }
+          - label: "Primary Category"
+            name: "primaryCategory"
+            widget: select
+            options:
+              - { label: "Web dev", value: "WDb"}
+              - { label: "UX/UI", value: "UX-UI"}
+              - { label: "DATA", value: "DT"}
+          - { label: "URL", name: "url", widget: string}
       # - { label: "Header image", name: "headerImage", widget: "image"}
       - { label: " Body", name: "body", widger: Markdown}
 
