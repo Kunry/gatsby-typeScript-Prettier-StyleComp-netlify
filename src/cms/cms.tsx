@@ -195,7 +195,7 @@ class StringControlURL extends React.Component<ControlStringProps, any> {
   public render() {
     // tslint:disable-next-line: no-debugger
     console.log(this);
-    debugger;
+    // debugger;
     const max = this.props.field.get("max");
     // console.log("--------------------")
     // console.log(this)
@@ -215,8 +215,8 @@ interface ControlObjProps {
 class ObjControl extends React.Component<ControlObjProps, any> {
   public isValid = () => {
     const { value } = this.props;
-    this.props.onChangeObject("laguaje", "es");
-    return false;
+    this.props.onChangeObject("url", `${this.props.value.get("laguaje")}/${this.props.value.get("primaryCategory")}`);
+    return true;
   };
   public render() {
     // tslint:disable-next-line: no-console
