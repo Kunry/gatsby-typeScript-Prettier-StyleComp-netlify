@@ -215,6 +215,7 @@ interface ControlObjProps {
 class ObjControl extends React.Component<ControlObjProps, any> {
   public isValid = () => {
     const { value } = this.props;
+    this.props.onChangeObject("laguaje", "es");
     return false;
   };
   public render() {
