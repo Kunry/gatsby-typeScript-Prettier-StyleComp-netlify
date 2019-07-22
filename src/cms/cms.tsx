@@ -202,7 +202,7 @@ class StringControlURL extends React.Component<ControlStringProps, any> {
     const StringWidget = CMS.getWidget("string").control;
     return <StringWidget {...this.props} />;
   }
-}
+} 
 
 CMS.registerWidget("customStringURL", StringControlURL, TestPreview);
 
@@ -213,6 +213,8 @@ interface ControlObjProps {
 
 // tslint:disable-next-line: max-classes-per-file
 class ObjControl extends React.Component<ControlObjProps, any> {
+
+
   public isValid = () => {
     const { value } = this.props;
     return false;
@@ -221,7 +223,7 @@ class ObjControl extends React.Component<ControlObjProps, any> {
     // tslint:disable-next-line: no-console
     console.log(this.props);
     const ObjWidget = CMS.getWidget("object").control;
-    return <ObjWidget {...this.props} />;
+    return <ObjWidget {...this.props}/>;
   }
 }
 
