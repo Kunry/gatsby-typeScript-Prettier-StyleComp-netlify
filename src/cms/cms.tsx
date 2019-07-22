@@ -215,7 +215,7 @@ interface ControlObjProps {
 class ObjControl extends React.Component<ControlObjProps, any> {
   public isValid = () => {
     const { value } = this.props;
-    this.props.onChangeObject("url", `${this.props.value.get("laguage")}/${this.props.value.get("primaryCategory")}`);
+    this.props.onChangeObject("url", `${this.props.value.get("language")}/${this.props.value.get("primaryCategory")}`);
     return true;
   };
   public render() {
