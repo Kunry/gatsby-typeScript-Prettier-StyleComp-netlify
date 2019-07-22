@@ -49,7 +49,20 @@ collections:
          name: string
          widget: "CustomObject"
          fields: 
-          - { label: "Pepe", name: "pepe", widget: "string"}
-          - { label: "Pepe2", name: "pepe2", widget: "string"}
+          - label: "Language"
+            name: "language"
+            widget: select
+            options: 
+              - { label: "Spanish", value: "es" } 
+              - { label: "English", value: "en" }
+              - { label: "French", value: "fr" }
+          - label: "Primary Category"
+            name: "primaryCategory"
+            widget: select
+            options:
+              - { label: "Web dev", value: "WDb"}
+              - { label: "UX/UI", value: "UX-UI"}
+              - { label: "DATA", value: "DT"}
+          - { label: "URL", name: "url", widget: string}
       # - { label: "Header image", name: "headerImage", widget: "image"}
       - { label: " Body", name: "body", widger: Markdown}
