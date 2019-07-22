@@ -159,11 +159,15 @@ class StringControl extends React.Component<ControlStringProps, any> {
     // tslint:disable-next-line: no-debugger
     console.log(this);
     debugger;
-    const max = this.props.field.get("max");
-    // console.log("--------------------")
-    // console.log(this)
     const StringWidget = CMS.getWidget("string").control;
-    return <StringWidget {...this.props} />;
+    const StringWidget2 = CMS.getWidget("string").control;
+    console.log(StringWidget)
+    return (
+      <>
+        <StringWidget {...this.props} />
+        <StringWidget2 {...this.props} />
+      </>
+    );
   }
 }
 
