@@ -221,9 +221,11 @@ class ObjControl extends React.Component<ControlObjProps, any> {
   public render() {
     // tslint:disable-next-line: no-console
     console.log(this.props);
-    const language = this.props.value.get("language") || "";
-    const primaryCategory = this.props.value.get("primaryCategory") || "";
-    this.props.onChangeObject("url", `${language}/${primaryCategory}`);
+    if (this.props.value) {
+      const language = this.props.value.get("language") || "";
+      const primaryCategory = this.props.value.get("primaryCategory") || "";
+      this.props.onChangeObject("url", `${language}/${primaryCategory}`);
+    }
     // const ObjWidget = this.ObjWidget;
     const ObjWidget = CMS.getWidget("object").control;
     return <ObjWidget {...this.props} />;
