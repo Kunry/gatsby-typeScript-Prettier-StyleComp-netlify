@@ -219,34 +219,26 @@ class ObjControl extends React.Component<ControlObjProps, any> {
 
   public isValid = () => {
     const { value } = this.props;
-    this.validate();
-    return true;
-  };
-  public validate = () => {
-    const { field } = this.props;
-    let fields = field.get("field") || field.get("fields");
-    fields = List.isList(fields) ? fields : List([fields]);
-    // tslint:disable-next-line: no-shadowed-variable
-    fields.forEach((field: any) => {
-      if (field.get("widget") === "hidden") {
-        return;
-      }
-      this.componentValidate[field.get("name")]();
-    });
+    const language = this.getValue("language");
+    const primaryCategory = this.getValue("primaryCategory");
+    return language && primaryCategory;
   };
 
   public render() {
     // tslint:disable-next-line: no-console
     console.log(this.props);
     if (this.props.value) {
-      const language = this.props.value.get("language") || "";
-      const primaryCategory = this.props.value.get("primaryCategory") || "";
+      const language = this.getValue("language");
+      const primaryCategory = this.getValue("primaryCategory");
       this.props.onChangeObject("url", `${language}/${primaryCategory}`);
     }
     // const ObjWidget = this.ObjWidget;
     const ObjWidget = CMS.getWidget("object").control;
     return <ObjWidget {...this.props} />;
   }
+  private getValue = (type: string) => {
+    return this.props.value ? this.props.value.get(type) : "";
+  };
 }
 
 CMS.registerWidget("CustomObject", ObjControl, TestPreview);
