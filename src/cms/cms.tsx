@@ -157,8 +157,8 @@ class StringControl extends React.Component<ControlStringProps, any> {
   };
   public render() {
     // tslint:disable-next-line: no-debugger
-    console.log(this);
-    debugger;
+    // console.log(this);
+    // debugger;
     const max = this.props.field.get("max");
     // console.log("--------------------")
     // console.log(this)
@@ -168,7 +168,6 @@ class StringControl extends React.Component<ControlStringProps, any> {
 }
 
 CMS.registerWidget("customString", StringControl, TestPreview);
-
 
 // tslint:disable-next-line: max-classes-per-file
 class StringControlURL extends React.Component<ControlStringProps, any> {
@@ -202,27 +201,34 @@ class StringControlURL extends React.Component<ControlStringProps, any> {
     const StringWidget = CMS.getWidget("string").control;
     return <StringWidget {...this.props} />;
   }
-};
+}
 
 CMS.registerWidget("customStringURL", StringControlURL, TestPreview);
 
 interface ControlObjProps {
-  value: object;
-  field: Map<string, any>;
+  value: Map<string, any>;
+  field: Map<Array, any>;
+  onChangeObject: any;
 }
 
 // tslint:disable-next-line: max-classes-per-file
 class ObjControl extends React.Component<ControlObjProps, any> {
   public isValid = () => {
     const { value } = this.props;
-    this.props.onChangeObject("url", `${this.props.value.get("language")}/${this.props.value.get("primaryCategory")}`);
+    this.props.onChangeObject(
+      "url",
+      `${this.props.value.get("language")}/${this.props.value.get(
+        "primaryCategory"
+      )}`
+    );
     return true;
   };
   public render() {
     // tslint:disable-next-line: no-console
     console.log(this.props);
-    
+
     const ObjWidget = CMS.getWidget("object").control;
+    this.props.field.push()
     return <ObjWidget {...this.props} />;
   }
 }
