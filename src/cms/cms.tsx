@@ -207,7 +207,7 @@ CMS.registerWidget("customStringURL", StringControlURL, TestPreview);
 
 interface ControlObjProps {
   value: Map<string, any>;
-  field: Map<Array, any>;
+  field: Map<[], any>;
   onChangeObject: any;
 }
 
@@ -228,7 +228,6 @@ class ObjControl extends React.Component<ControlObjProps, any> {
     console.log(this.props);
 
     const ObjWidget = CMS.getWidget("object").control;
-    this.props.field.push()
     return <ObjWidget {...this.props} />;
   }
 }
