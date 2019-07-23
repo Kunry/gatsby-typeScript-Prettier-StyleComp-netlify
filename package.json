@@ -30,6 +30,7 @@
     "gatsby-transformer-sharp": "^2.1.1",
     "github-buttons": "git+https://github.com/ntkme/github-buttons.git",
     "gotrue-js": "^0.9.25",
+    "immutable": "^4.0.0-rc.12",
     "netlify-cms": "^2.1.1",
     "netlify-cms-core": "^2.12.1",
     "node-fetch": "^2.6.0",
