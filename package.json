@@ -34,7 +34,7 @@
     "netlify-cms": "^2.1.1",
     "netlify-cms-core": "^2.12.1",
     "node-fetch": "^2.6.0",
-    "node-sass": "^4.9.2",
+    "node-sass": "^4.13.1",
     "normalize.css": "^8.0.0",
     "open-color": "^1.6.3",
     "parcel-bundler": "^1.9.4",
