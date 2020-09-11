@@ -33,7 +33,7 @@
     "immutable": "^4.0.0-rc.12",
     "netlify-cms": "^2.1.1",
     "netlify-cms-core": "^2.12.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-sass": "^4.9.2",
     "normalize.css": "^8.0.0",
     "open-color": "^1.6.3",
