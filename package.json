@@ -65,7 +65,7 @@
     "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.7",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "mz": "^2.7.0",
     "prettier": "^1.18.2",
     "rimraf": "^2.6.2",
